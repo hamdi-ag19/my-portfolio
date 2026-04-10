@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="Full-Stack Developer, Hamdi Al-Luqmani, Portfolio, Web Development">
+<meta name="description" content="Hamdi Al-Luqmani | Full-stack web developer portfolio featuring services, skills, projects and contact details.">
+<meta name="author" content="Hamdi Al-Luqmani">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/Home.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hamdi Al-Luqmani",
+  "jobTitle": "Full-Stack Web Developer",
+  "url": "https://yourwebsite.com",  // Replace with your actual URL
+  "sameAs": [
+    "https://www.linkedin.com/in/hamdi-al-luqmani-8229973a4/",
+    "https://github.com/hamdi-ag19"
+  ],
+  "knowsAbout": ["Full-Stack Development", "Python", "JavaScript", "React", "Node.js", "WordPress"],
+  "description": "Full-stack web developer specializing in modern web applications and responsive design."
+}
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');  // Replace with your actual GA ID
+</script>
+
+</head>
+
+<body>
+
+  <!-- Loading -->
+     <!-- التحميل -->
+    <div id="preloader">
+  <div class="preloader-content">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+  </div>
+</div>
+
+
+    <div id="lang-loader">
+  <div class="loader-spinner"></div>
+</div>
+
+
+<!-- ================= NAVBAR ================= -->
+ <!-- ================= شريط التنقل ================= -->
+<nav class="navbar"> <h2 class="logo">Hamdi</h2>
+  <!-- Hamburger Menu -->
+     <!-- قائمة الهمبرغر -->
+
+  <div id="menuToggle">
+  <input id="checkbox" type="checkbox">
+  <label class="toggle" for="checkbox">
+    <div class="bar bar--top"></div>
+    <div class="bar bar--middle"></div>
+    <div class="bar bar--bottom"></div>
+  </label>
+</div>
+
+<!-- ================ Links in the navbar =============-->
+ <!-- ================ الروابط في شريط التنقل =============-->
+  <ul class="nav-links">
+    <li><a id="nav-home" href="#home"><i   class="fas fa-home"></i> Home</a></li>
+    <li><a id="nav-about" href="#about"><i  class="fas fa-user"></i> About</a></li>
+    <li><a id="nav-skills" href="#skills"><i  class="fas fa-code"></i> Skills</a></li>
+    <li><a id="nav-education" href="#education"><i  class="fas fa-graduation-cap"></i> Education</a></li>
+    <li><a id="nav-projects"  href="#projects"><i  class="fas fa-project-diagram"></i> Projects</a></li>
+    <li><a id="nav-my-services" href="#my-services"><i class="fas fa-concierge-bell"></i> My Services</a></li>
+    <li><a id="nav-numbers"    href="#stats"><i  class="fas fa-chart-line"></i> Numbers</a></li>
+    <li><a id="nav-my-journey"  href="#my-journey"><i class="fas fa-route"></i> My Journey</a></li>
+    <li><a id="nav-currently-learning" href="#currently-learning"><i class="fas fa-book-reader"></i> Learning</a></li>
+    <li><a id="nav-contact"   href="#contact"><i  class="fas fa-envelope"></i> Contact</a></li>
+
+  <div class="nav-controls">
+    <button id="lang-toggle" class="lang-btn" aria-label="Switch Language">
+      <i class="fas fa-globe"></i>
+      <span id="lang-text">EN</span>
+    </button>
+
+    <label class="theme-switch">
+      <input type="checkbox" class="theme-switch__checkbox" id="theme-toggle">
+      <div class="theme-switch__container">
+        <div class="theme-switch__clouds"></div>
+        <div class="theme-switch__stars-container"></div>
+        <div class="theme-switch__circle-container">
+          <div class="theme-switch__sun-moon-container">
+            <div class="theme-switch__moon">
+              <div class="theme-switch__spot"></div>
+              <div class="theme-switch__spot"></div>
+              <div class="theme-switch__spot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+  </div>
+</nav>
+  </ul>
+
+<!-- ================= HERO ================= -->
+ <!-- =================  النصوص في الوجهاء ================= -->
+<header id="home" class="hero">
+  <h1 id="hero-title">  Hamdi Al-Luqmani</h1>
+  <p id="hero-subtitle" class="hero-subtitle" >Computer Science | Full-Stack Web Developer</p>
+  <h3 id="hero-desc" class="hero-subtitle" >Crafting digital experiences with passion.</h3>
+  <h3 id="hero-1Desc"class="hero-description"  >Crafting Innovative Digital Solutions with High Performance & Modern Design</h3><br>
+  <h5 id="hero-2Desc" class="hero-description"  >A web developer specialized in full-stack application development, with a focus on clean code and unforgettable user experiences."</h5>
+<br><br>
+  <div class="hero-btns">
+  <a href="CV Hamdi.pdf" class=" btn  btn-primary">
+    <i class="fas fa-file-alt"></i>
+    <span id="heroBtn1">View CV</span>
+  </a>
+
+  <a href="#contact" class=" btn  btn-secondary">
+    <i class="fas fa-paper-plane"></i>
+    <span id="heroBtn2">Contact</span>
+  </a>
+</div>
+
+</header>
+
+<!-- ================= all SECTIONS ================= -->
+ <!-- ================= جميع الأقسام ================= -->
+
+
+<!-- =================   about me Sector  ================= -->
+ <!-- =================  قسم عني   ================= -->
+
+<section id="about" class="container reveal">
+
+    <div class="info-card about-wrapper">
+
+        <div class="about-image">
+
+            <div class="profile-circle">
+
+                <i class="fas fa-user-graduate"></i>
+
+            </div>
+
+        </div>
+
+        <div class="about-content">
+            
+
+            <h2 id="about-title"   class="section-title">About Me</h2>
+
+            <p id="about-1text"  class="lead-text">
+
+                I am a <strong>full-stack web developer</strong> graduated with a diploma from Taibah University (2026).
+
+                I specialize in crafting high-performance, user-centric web applications.
+
+            </p>
+
+            <p id="about-2text"  class="lead-text">
+
+                An ambitious young man with experience in developing web applications, where I have designed the user interface and programmed the application using HTML, CSS, and JavaScript.
+
+                 I have a strong ability to work within teams, which helps me provide innovative solutions to complex technical problems. In addition,
+
+                 I have applied project management principles to organize tasks and achieve timelines efficiently.
+
+                 I seek to join a leading company that provides me with the opportunity for professional development and growth.
+
+               
+            </p>
+
+            <p id="about-3text" class="sub-text">
+
+                My journey is driven by a passion for solving complex problems through clean code and modern design.
+
+                I don't just build websites; I create digital experiences that are fast, secure, and scalable.
+
+            </p>
+
+            <div class="about-highlights">
+
+                <div class="highlight-item">
+
+                    <i class="fas fa-check-circle"></i>
+
+                    <span id="about-4text" >Full-Stack Ready</span>
+
+                </div>
+
+                <div class="highlight-item">
+
+                    <i class="fas fa-check-circle"></i>
+
+                    <span id="about-5text" >Problem Solver</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================    skills Sector ================= -->
+<!-- =================    قسم المهارات  ================= -->
+ 
+<section id="skills" class="container reveal">
+    <div class="info-card">
+        <h2 id="skills-title" class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            
+            <div class="skill-card">
+                <div class="skill-icon-wrap">
+                    <i class="fab fa-html5 html-icon"></i>
+                </div>
+                <span>HTML5</span>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon-wrap">
+                    <i class="fab fa-css3-alt css-icon"></i>
+                </div>
+                <span>CSS3</span>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon-wrap">
+                    <i class="fab fa-js-square js-icon"></i>
+                </div>
+                <span>JavaScript</span>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon-wrap">
+                    <i class="fab fa-php php-icon"></i>
+                </div>
+                <span>PHP</span>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon-wrap">
+                    <i class="fas fa-database sql-icon"></i>
+                </div>
+                <span>SQL</span>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon-wrap">
+                    <i class="fab fa-git-alt git-icon"></i>
+                </div>
+                <span>Git & GitHub</span>
+            </div>
+
+            
+      <div class="skill-card">
+        <div class="skill-icon-wrap">
+        <i class="fab fa-python python-icon"></i>
+    </div>
+    <span id="skill-python-text">Python</span>
+</div>
+
+<div class="skill-card">
+    <div class="skill-icon-wrap">
+        <i class="fab fa-wordpress wp-icon"></i>
+    </div>
+    <span id="skill-wp-text">WordPress</span>
+</div>
+
+<div class="skill-card">
+    <div class="skill-icon-wrap">
+        <i class="fab fa-linux linux-icon"></i>
+    </div>
+    <span id="skill-linux-text">Linux</span>
+</div>
+
+<div class="skill-card">
+    <div class="skill-icon-wrap">
+        <i class="fab fa-windows win-icon"></i>
+    </div>
+    <span id="skill-win-text">Windows</span>
+</div>
+
+<div class="skill-card">
+    <div class="skill-icon-wrap">
+        <i class="fab fa-react react-icon"></i>
+    </div>
+    <span id="skill-react-text">React.js</span>
+</div>
+
+<div class="skill-card">
+    <div class="skill-icon-wrap">
+        <i class="fab fa-node-js node-icon"></i>
+    </div>
+    <span id="skill-node-text">Node.js</span>
+</div>
+
+                 <!--Personal skills -->
+              <!--المهارات الشخصية  -->
+
+        </div>
+        <div class="skills-divider"></div>
+        <div class="skills-category">
+                <div class="category-header">
+                    <h3 id="soft-skills-label" class="section-title" >Personal skills </h3>
+                </div>
+
+                <div class="skills-cards-grid" id="soft-skills-items-container">
+                    
+                    <div class="skill-card-item">
+                        <div class="skill-card-icon"><i class="fas fa-code"></i></div>
+                        <span class="skill-card-text" id="skill-web-prog">Web Programming</span>
+                    </div>
+
+                    <div class="skill-card-item">
+                        <div class="skill-card-icon"><i class="fas fa-paint-brush"></i></div>
+                        <span class="skill-card-text" id="skill-ui-design">UI Design</span>
+                    </div>
+
+                    <div class="skill-card-item">
+                        <div class="skill-card-icon"><i class="fas fa-tasks"></i></div>
+                        <span class="skill-card-text" id="skill-project-mgmt">Project Management</span>
+                    </div>
+
+                    <div class="skill-card-item">
+                        <div class="skill-card-icon"><i class="fas fa-bug"></i></div>
+                        <span class="skill-card-text" id="skill-troubleshoot">Troubleshooting</span>
+                    </div>
+
+                    <div class="skill-card-item">
+                        <div class="skill-card-icon"><i class="fas fa-database"></i></div>
+                        <span class="skill-card-text" id="skill-db-mgmt">Database Management</span>
+                    </div>
+
+                    <div class="skill-card-item">
+                        <div class="skill-card-icon"><i class="fas fa-users"></i></div>
+                        <span class="skill-card-text" id="skill-teamwork">Teamwork</span>
+                    </div>
+
+                    <div class="skill-card-item">
+                        <div class="skill-card-icon"><i class="fas fa-desktop"></i></div>
+                        <span class="skill-card-text" id="skill-comp-apps">Computer Applications</span>
+                    </div>
+
+                    <div class="skill-card-item">
+                        <div class="skill-card-icon"><i class="fas fa-laptop-code"></i></div>
+                        <span class="skill-card-text" id="skill-web-dev">Web Development</span>
+                    </div>
+
+                    <div class="skill-card-item">
+                        <div class="skill-card-icon"><i class="fas fa-user-tie"></i></div>
+                        <span class="skill-card-text" id="skill-cust-orient">Customer Orientation</span>
+                    </div>
+
+                    <div class="skill-card-item">
+                        <div class="skill-card-icon"><i class="fas fa-handshake"></i></div>
+                        <span class="skill-card-text" id="skill-collab">Collaborative Skills</span>
+                    </div>
+
+
+                    <div class="skill-card-item">
+                      <div class="skill-card-icon"><i class="fas fa-lightbulb"></i></div>
+                      <span class="skill-card-text" id="skill-problem-solving">Problem Solving</span>
+                    </div>
+
+                    <div class="skill-card-item">
+                      <div class="skill-card-icon"><i class="fas fa-stopwatch"></i></div>
+                      <span class="skill-card-text" id="skill-time-management">Time Management</span>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+</section>
+
+
+<!-- ================= Education Sector  ================= -->
+<!-- ================= قسم التعليم   ================= -->
+
+<section id="education" class="container reveal">
+    <div class="info-card">
+        <h2  id="education-title" class="section-title">Education</h2>
+        <div class="education-content">
+            <div class="edu-icon">
+                <i class="fas fa-university"></i>
+            </div>
+            <div class="edu-details">
+                <h3 id="education-1text">Taibah University</h3>
+                <p id="education-2text"  class="degree">Computer Science and Information Diploma in (full-stack web developer)</p>
+                <div class="edu-meta">
+                    <span id="education-3text" class="edu-year"><i class="far fa-calendar-alt"></i> Graduation Year: 2026</span>
+                    <span id="education-4text" class="edu-status"><i class="fas fa-graduation-cap"></i> Expert student</span>
+                </div>
+                <p id="education-5text"   class="edu-desc">Focusing on Software Engineering, Data Structures, and Modern Web Technologies.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= projects Sector  ================= -->
+<!-- ================= قسم المشاريع   ================= -->
+
+<section id="projects" class="container reveal">
+    <div class="info-card">
+        <h2 id="projects-title"  class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3 id="projects-1text"  >personal website</h3>
+                <p id="projects-2text"  >A professional personal website built with HTML, CSS, and JS to showcase my skills and journey.</p>
+                <a href="#" id="projects-3text" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h3 id="projects-4text" >To-Do Web App</h3>
+                <p id="projects-5text" >A functional task management app using JavaScript and LocalStorage for data persistence.</p>
+                <a href="#"  id="projects-6text" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-blog"></i>
+                </div>
+                <h3 id="projects-7text" >Blog CMS</h3>
+                <p id="projects-8text" >A Content Management System for blogs developed with PHP and SQL for dynamic content.</p>
+                <a href="#" id="projects-9text"  class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= My Services Sector  ================= -->
+<!-- ================= قسم خدماتي  ================= -->
+
+<section id="my-services" class="container reveal">
+    <div class="info-card">
+        <h2 id="MyServices-title"  class="section-title">My Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 id="MyServices-1text" >Web Development</h3>
+                <p id="MyServices-2text" >Building responsive, fast, and modern websites using the latest technologies.</p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 id="MyServices-3text" >UI/UX Design</h3>
+                <p id="MyServices-4text">Translating designs into clean, semantic, and maintainable code with great user experience.</p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3 id="MyServices-5text" >Backend Solutions</h3>
+                <p id="MyServices-6text">Developing robust server-side logic and database management systems for scalable apps.</p>
+
+            </div>
+            
+        <div class="service-item">
+        <div class="service-icon"><i class="fab fa-wordpress"></i></div>
+        <h3 id="service-wp-title">WordPress Solutions</h3>
+        <p id="service-wp-desc">Customizing themes and plugins to create powerful, easy-to-manage websites.</p>
+    </div>
+
+<div class="service-item">
+    <div class="service-icon">
+        <i class="fas fa-search-dollar"></i>
+    </div>
+    <h3 id="service-seo-title">SEO Optimization</h3>
+    <p id="service-seo-desc">Optimizing your website to rank higher on search engines and attract more organic traffic.</p>
+</div>
+
+<div class="service-item">
+    <div class="service-icon">
+        <i class="fas fa-lightbulb"></i>
+    </div>
+    <h3 id="service-consulting-title">Tech Consulting</h3>
+    <p id="service-consulting-desc">Providing expert advice on the best technologies to scale your business effectively.</p>
+</div>
+
+<div class="service-item">
+        <div class="service-icon"><i class="fas fa-headset"></i></div>
+        <h3 id="service-support-title">Technical Support</h3>
+        <p id="service-support-desc">Providing ongoing maintenance and support to ensure your site runs smoothly.</p>
+    </div>
+
+<div class="service-item">
+        <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+        <h3 id="service-shop-title">E-commerce Stores</h3>
+        <p id="service-shop-desc">Building secure and scalable online stores to boost your sales effectively.</p>
+    </div>
+
+    <div class="service-item">
+    <div class="service-icon">
+        <i class="fas fa-shield-alt"></i>
+    </div>
+    <h3 id="service-security-title">Cybersecurity</h3>
+    <p id="service-security-desc">Implementing advanced security protocols to protect your website from cyber threats and data breaches.</p>
+</div>
+
+        </div><br><br>
+        <a href="#contact" class="cta-banner-link">
+        <div class="cta-banner">
+            <span id="contact-cta-text">For services, please contact me</span>
+            <i class="fas fa-external-link-alt"></i>
+        </div>
+    </a>
+    </div>
+
+</section>
+
+<!-- ================= Numbers Sector  ================= -->
+<!-- ================= قسم الارقام   ================= -->
+
+<section   id="stats"  class="achievements-section-v2">
+    <div class="custom-layout-container">
+        
+        <div class="achievements-header">
+            <h2 id="Numbers-title"  class="achievements-main-title">My Achievements in numbers</h2>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="achievements-cards-wrapper compact-row">
+            <div class="stat-card compact">
+                <i class="fas fa-briefcase"></i>
+                <h3 class="stat-number" data-target="5">0</h3>
+                <p id="Numbers-1text"   class="stat-label">Completed Projects</p>
+            </div>
+            
+            <div class="stat-card compact">
+                <i class="fas fa-code"></i>
+                <h3 class="stat-number" data-target="3">0</h3>
+                <p id="Numbers-2text"  class="stat-label">Years of Learning</p>
+            </div>
+
+            <div class="stat-card compact">
+                <i class="fas fa-layer-group"></i>
+                <h3 class="stat-number" data-target="12">0</h3>
+                <p  id="Numbers-3text"  class="stat-label">Technology skills</p>
+            </div>
+
+            <div class="stat-card compact">
+                <i class="fas fa-smile"></i>
+                <h3 class="stat-number" data-target="5">0</h3>
+                <p   id="Numbers-4text"  class="stat-label">Happy Clients</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+        
+    
+<!-- ================= My Journey Sector  ================= -->
+<!-- ================= قسم رحلتي   ================= -->
+
+<section id="my-journey" class="journey-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="main-title" id="Myjourney-title">My Journey</h2>
+            <div class="title-line"></div>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-dot"><i class="fas fa-rocket"></i></div>
+                <div class="timeline-date">2022</div>
+                <div class="timeline-content">
+                    <h3 id="MyJourney-1text">The Spark</h3>
+                    <p id="MyJourney-2text">Started my journey into the world of programming with Python and JavaScript.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"><i class="fas fa-code"></i></div>
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3 id="MyJourney-3text">Web Specialization</h3>
+                    <p id="MyJourney-4text">Focused on Frontend and Backend technologies to build full-stack apps.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item highlight">
+                <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
+                <div class="timeline-date">2026</div>
+                <div class="timeline-content">
+                    <h3 id="MyJourney-5text">Graduation</h3>
+                    <p id="MyJourney-6text">Graduating from Taibah University as a Computer Science | As a full-stack web developer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= Currently Learning Sector  ================= -->
+<!-- ================= قسم التعلم الحلي   ================= -->
+
+<section id="currently-learning" class="container reveal ">
+    <div class="info-card">
+        <h2 id="CurrentlyLearning-title"  class="section-title">Currently Learning</h2>
+        <div class="learning-grid">
+            
+            <div class="learning-item">
+                <div class="tech-info">
+                    <i class="fab fa-react react-icon"></i>
+                    <div class="tech-text">
+                        <h3>React.js</h3>
+                        <p id="CurrentlyLearning-1text">Mastering Hooks, Context API & Redux</p>
+                    </div>
+                </div>
+                <div class="progress-container">
+        <div class="progress-bar" data-progress="75" style="width: 0%;">
+            <span>0%</span>
+        </div>
+                </div>
+            </div>
+
+            <div class="learning-item">
+                <div class="tech-info">
+                    <i class="fab fa-node-js node-icon"></i>
+                    <div class="tech-text">
+                        <h3>Node.js & Express</h3>
+                        <p id="CurrentlyLearning-2text">Building Restful APIs & MongoDB Integration</p>
+                    </div>
+                </div>
+                <div class="progress-container">
+        <div class="progress-bar" data-progress="60" style="width: 0%;">
+            <span>0%</span>
+        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= contact  Sector  ================= -->
+<!-- ================= قسم التواصل   ================= -->
+
+<section id="contact" class="container reveal ">
+    <div class="info-card">
+        <div class="contact-visual">
+            <svg viewBox="0 0 200 200" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 50 L100 110 L180 50" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
+                <rect x="20" y="50" width="160" height="110" rx="10" fill="none" stroke="#2563eb" stroke-width="5"/>
+                <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="10 100 100" dur="3s" repeatCount="indefinite" additive="sum" />
+            </svg>
+        </div>
+        <h2 id="contact-title"   class="section-title">Get In Touch</h2>
+        <p id="contact-1text"   class="contact-desc">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+        <p id="contact-2text"   class="contact-desc">If you have any questions or want to work together, feel free to reach out!</p>
+
+            <div class="contact-action">
+                <a href="contact.html" class="main-btn">
+                    <span id="contact-message" >Send a Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= footer Sector  ================= -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+<div class="footer-logo">
+</div>      
+<div class="status-badge">
+    <span class="dot"></span>
+    <span id="footer-status">Available for hire</span>
+  </div>
+      <p id="footer-desc">Crafting digital experiences with passion.</p>
+    </div>
+
+<div class="footer-col">
+            <h4 id="footer-title">Quick Links</h4>
+            <div class="quick-nav">
+                <a id="footer-home" href="#home">Home</a>
+                <a id="footer-about" href="#about">About</a>
+                <a id="footer-skills" href="#skills">Skills</a>
+                <a id="footer-education" href="#education">Education</a>
+                <a id="footer-projects" href="#projects">Projects</a>
+            </div>
+        </div>
+
+
+    <div class="footer-socials">  
+        <h4  id="Connect-title" class="connect-title">Connect</h4>
+  <ul class="example-2">
+    <li class="icon-content">
+
+      <a href="https://www.linkedin.com/in/hamdi-al-luqmani-8229973a4/" aria-label="LinkedIn" data-social="linkedin">
+        <div class="filled"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16" xml:space="preserve">
+          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" fill="currentColor"></path>
+        </svg>
+      </a>
+      <div class="tooltip">LinkedIn</div>
+    </li>
+
+    <li class="icon-content">
+      <a href="https://github.com/hamdi-ag19" aria-label="GitHub" data-social="github">
+        <div class="filled"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16" xml:space="preserve">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" fill="currentColor"></path>
+        </svg>
+      </a>
+      <div class="tooltip">GitHub</div>
+    </li>
+  </ul>
+</div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p id="footer-copy">Hamdi Al-Luqmani. All rights reserved. &copy; 2026  </p>
+  </div>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+</footer>
+
+<script src="assets/js/Home.js"></script>
+<script src="assets/js/Translation.js"></script>
+
+<div class="scroll-progress">
+  <div id="progress-bar"></div>
+</div>
+
+
+
+</body>
+</html>
