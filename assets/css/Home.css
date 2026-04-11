@@ -1,6 +1,17 @@
 /* Reset & Base */
 /* إعادة تعيين والأساس */
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 * {margin:0; padding:0; box-sizing:border-box;}
 body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f8fafc; color:#475569; line-height:1.7; padding-top:70px; transition:background 0.3s, color 0.3s;}
 a{text-decoration:none; transition: color 0.3s;}
@@ -2865,3 +2876,42 @@ p {
   animation: spin 0.8s linear infinite;
 }
 
+/* Small screen improvements (less than 768 pixels) */
+/* تحسينات الشاشات الصغيرة (أقل من 768 بكسل) */
+@media (max-width: 768px) {
+    section {
+        padding: 40px 15px !important;
+    }
+
+    /*Hero section improvement */
+    /* تحسين قسم الـ Hero */
+    .hero h1 {
+        font-size: 2rem !important; 
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1rem !important;
+        padding: 0 10px;
+    }
+
+    .hero-btns {
+        flex-direction: column; 
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .btn {
+        width: 100% !important;
+        justify-content: center;
+    }
+
+    .skills-grid, .projects-grid {
+        grid-template-columns: 1fr !important; 
+        gap: 20px !important;
+    }
+
+    .nav-links {
+        padding: 20px;
+    }
+}
