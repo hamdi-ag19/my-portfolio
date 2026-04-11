@@ -600,6 +600,73 @@ body.dark .signin a:hover {
     color: #38bdf8;
 }
 
+/* Mobile Responsiveness */
+/* الاستجابة للشاشات الصغيرة */
+
+@media (max-width: 768px) {
+    .form {
+        width: 90%;
+        max-width: none;
+        padding: 30px;
+        margin: 50px 20px;
+    }
+
+    .title {
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    .message {
+        font-size: 13px;
+    }
+
+    .flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .submit {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form {
+        padding: 20px;
+        margin: 30px 10px;
+    }
+
+    .title {
+        font-size: 20px;
+        padding-left: 15px;
+    }
+
+    .title::before, .title::after {
+        width: 12px;
+        height: 12px;
+    }
+
+    .message {
+        font-size: 12px;
+    }
+
+    .input {
+        padding: 8px 8px 16px 8px;
+    }
+
+    .input + span {
+        left: 8px;
+        top: 12px;
+        font-size: 0.8em;
+    }
+
+    .submit {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+}
+
 
 /* ================= FOOTER STYLES ================= */
 /* ================= تنسيق التذييل ================= */
