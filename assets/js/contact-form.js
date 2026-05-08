@@ -417,4 +417,42 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+    
+    // ===== Mobile nav toggle (self-contained for contact page) =====
+    const navLinks = document.querySelector('.nav-links');
+    const menuContainer = document.getElementById('menuToggle');
+    const checkbox = document.getElementById('checkbox');
+    const backdrop = document.getElementById('nav-backdrop');
+
+    const setOpen = (open) => {
+        if (!navLinks || !checkbox) return;
+        if (open) {
+            navLinks.classList.add('show');
+            backdrop && backdrop.classList.add('active');
+            checkbox.checked = true;
+            checkbox.setAttribute('aria-expanded', 'true');
+        } else {
+            navLinks.classList.remove('show');
+            backdrop && backdrop.classList.remove('active');
+            checkbox.checked = false;
+            checkbox.setAttribute('aria-expanded', 'false');
+        }
+    };
+
+    if (checkbox) {
+        checkbox.addEventListener('change', () => setOpen(checkbox.checked));
+    }
+
+    document.addEventListener('click', (e) => {
+        if (!checkbox || !checkbox.checked) return;
+        const isInside = navLinks && navLinks.contains(e.target);
+        const isOnMenu = menuContainer && menuContainer.contains(e.target);
+        if (!isInside && !isOnMenu) setOpen(false);
+    });
+
+    backdrop && backdrop.addEventListener('click', () => setOpen(false));
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => setOpen(false));
+    });
 });

@@ -36,35 +36,45 @@
        <!-- ================= شريط التنقل  ================= -->
 
 
-  <nav class="navbar">
-    <div class="logo">Hamdi</div>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a id="nav-home" href="index.html"><i class="fas fa-home"></i> Home</a></li>
-      </ul>
+  <nav class="navbar"> <h2 class="logo">Hamdi</h2>
+  <div id="menuToggle">
+  <label class="toggle" for="checkbox">
+    <div class="bar bar--top"></div>
+    <div class="bar bar--middle"></div>
+    <div class="bar bar--bottom"></div>
+  </label>
+</div>
 
-      <div class="nav-controls">
-        <button id="lang-toggle" class="lang-btn">🌐 AR</button>
+  <ul class="nav-links">
+    <li><a id="nav-home" href="index.html#home"><i class="fas fa-home"></i> Home</a></li>
 
-        <label class="theme-switch">
-          <input type="checkbox" class="theme-switch__checkbox" id="theme-toggle" aria-label="Toggle dark mode">
-          <div class="theme-switch__container">
-            <div class="theme-switch__clouds"></div>
-            <div class="theme-switch__stars-container"></div>
-            <div class="theme-switch__circle-container">
-              <div class="theme-switch__sun-moon-container">
-                <div class="theme-switch__moon">
-                  <div class="theme-switch__spot"></div>
-                  <div class="theme-switch__spot"></div>
-                  <div class="theme-switch__spot"></div>
-                </div>
-              </div>
+  <div class="nav-controls">
+    <button id="lang-toggle" class="lang-btn" aria-label="Switch Language">
+      <i class="fas fa-globe"></i>
+      <span id="lang-text">EN</span>
+    </button>
+
+    <label class="theme-switch">
+      <input type="checkbox" class="theme-switch__checkbox" id="theme-toggle">
+      <div class="theme-switch__container">
+        <div class="theme-switch__clouds"></div>
+        <div class="theme-switch__stars-container"></div>
+        <div class="theme-switch__circle-container">
+          <div class="theme-switch__sun-moon-container">
+            <div class="theme-switch__moon">
+              <div class="theme-switch__spot"></div>
+              <div class="theme-switch__spot"></div>
+              <div class="theme-switch__spot"></div>
             </div>
           </div>
-        </label>
+        </div>
       </div>
-    </div>
-  </nav>
+    </label>
+  </div>
+</nav>
+
+<!-- Mobile nav backdrop for closing side panel -->
+<div id="nav-backdrop" class="nav-backdrop" aria-hidden="true"></div>
 
 <div class="form-wrapper">
     </div>

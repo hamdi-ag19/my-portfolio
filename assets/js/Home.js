@@ -50,29 +50,43 @@
 
  
 
-document.addEventListener("click", function (e) {
-
+document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelector(".nav-links");
   const menuContainer = document.getElementById("menuToggle");
   const checkbox = document.getElementById("checkbox");
+  const backdrop = document.getElementById("nav-backdrop");
 
-  if (!checkbox.checked) return;
+  if (!navLinks || !checkbox) return;
 
-  const isClickInsideNav = navLinks.contains(e.target);
-  const isClickOnMenu = menuContainer.contains(e.target);
+  const setOpen = (open) => {
+    if (open) {
+      navLinks.classList.add("show");
+      backdrop && backdrop.classList.add("active");
+      checkbox.checked = true;
+      checkbox.setAttribute("aria-expanded", "true");
+    } else {
+      navLinks.classList.remove("show");
+      backdrop && backdrop.classList.remove("active");
+      checkbox.checked = false;
+      checkbox.setAttribute("aria-expanded", "false");
+    }
+  };
 
-  if (!isClickInsideNav && !isClickOnMenu) {
-    navLinks.classList.remove("show");
-    checkbox.checked = false;
-  }
+  checkbox.addEventListener("change", () => setOpen(checkbox.checked));
 
-});
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
-    checkbox.checked = false;
+  document.addEventListener("click", function (e) {
+    if (!checkbox.checked) return;
+    const isClickInsideNav = navLinks.contains(e.target);
+    const isClickOnMenu = menuContainer && menuContainer.contains(e.target);
+    if (!isClickInsideNav && !isClickOnMenu) setOpen(false);
   });
+
+  backdrop && backdrop.addEventListener("click", () => setOpen(false));
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
 });
 
 

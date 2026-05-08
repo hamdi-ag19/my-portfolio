@@ -403,6 +403,17 @@ loader.classList.add("active");setTimeout(() => {
       langBtn.textContent = "🌐 AR";
     }
 
+    // Ensure mobile nav is closed when switching language to avoid off-screen states
+    const checkboxEl = document.getElementById('checkbox');
+    const navLinksEl = document.querySelector('.nav-links');
+    const backdrop = document.getElementById('nav-backdrop');
+    if (checkboxEl) {
+      checkboxEl.checked = false;
+      checkboxEl.setAttribute('aria-expanded', 'false');
+    }
+    if (navLinksEl) navLinksEl.classList.remove('show');
+    if (backdrop) backdrop.classList.remove('active');
+
     document.body.classList.remove("fade");
 
   }, 200);

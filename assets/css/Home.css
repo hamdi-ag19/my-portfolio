@@ -168,7 +168,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 2rem;
-  z-index: 1000;
+    z-index: 2000 !important;
   direction: ltr; 
   transition: all 0.4s ease;
   background: transparent; 
@@ -316,17 +316,25 @@ body.rtl .nav-links li {
     /* In the dropdown list, we place the items under each other */
     /* في القائمة المنسدلة نجعل العناصر تحت بعضها */
 
+    body.rtl #menuToggle {
+        left: 25px !important;
+        right: auto !important;
+    }
+
+    /* RTL: make mobile nav off-canvas from left */
     body.rtl .nav-links {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        left: 0;
         right: auto;
-        left: -280px; 
-        transition: 0.4s ease;
+        transform: translateX(-100%);
+        border-radius: 0 12px 12px 0;
+        transition: transform 0.35s cubic-bezier(.2,.9,.2,1);
     }
 
     body.rtl .nav-links.show {
-        left: 15px; 
+        transform: translateX(0);
     }
 }
 
@@ -1647,27 +1655,31 @@ body.dark .contact-item span { color: #94a3b8; }
 body.dark .contact-desc { color: #94a3b8; }
 
 body.rtl #menuToggle {
-  right: auto;
-  left: 25px;
+    right: auto;
+    left: 25px;
 }
 
 body.rtl {
-  direction: rtl;
-  text-align: right;
-  font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
 }
 
 @media (max-width: 768px) {
-  body.rtl .nav-links {
-    right: auto;
-    left: -280px; 
-    transition: 0.4s ease;
-  }
+    /* RTL: off-canvas should slide from the left */
+    body.rtl .nav-links {
+        left: 0;
+        right: auto;
+        transform: translateX(-100%);
+        border-radius: 0 12px 12px 0;
+        transition: transform 0.35s cubic-bezier(.2,.9,.2,1);
+    }
 
-  body.rtl .nav-links.show {
-    right: auto;
-    left: 15px; 
-  }
+    body.rtl .nav-links.show {
+        transform: translateX(0);
+    }
+
+    body.rtl #menuToggle { left: 15px; right: auto; }
 }
 
 .navbar .logo{color:#fff; font-size:22px; font-weight:bold;}
@@ -1772,20 +1784,23 @@ body.rtl {
     z-index: 1001;
   }
 
-  .nav-links {
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: -280px; 
-    width: 260px;
-    background: linear-gradient(135deg,#0f172a,#1e3a8a);
-    padding: 25px 20px;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    transition: 0.4s ease;
-     max-height: 80vh;     
-    overflow-y: auto;  
-  }
+    .nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: min(86vw, 320px);
+        max-width: 320px;
+        height: calc(100vh - 90px);
+        transform: translateX(100%);
+        background: linear-gradient(135deg,#0f172a,#1e3a8a);
+        padding: 25px 20px;
+        border-radius: 12px 0 0 12px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+        transition: transform 0.35s cubic-bezier(.2,.9,.2,1);
+        overflow-y: auto;
+        z-index: 1500;
+    }
 
   .nav-links::-webkit-scrollbar {
     width: 6px;
@@ -1796,9 +1811,9 @@ body.rtl {
     border-radius: 10px;
   }
 
-  .nav-links.show {
-    right: 15px; 
-  }
+    .nav-links.show {
+        transform: translateX(0);
+    }
 
   .nav-links li {
     width: 100%;
@@ -1808,7 +1823,8 @@ body.rtl {
 
   .nav-links li a {
     display: block;
-    padding: 10px 0;
+        padding: 14px 0;
+        font-size: 1.05rem;
   }
 
 
@@ -2989,3 +3005,21 @@ p {
         line-height: 1.3;
     }
 }
+
+/* Backdrop for off-canvas nav on mobile */
+.nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1400;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease;
+}
+
+.nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* RTL support handled earlier in the primary mobile media query */
