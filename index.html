@@ -58,7 +58,7 @@
 
 <!-- ================= NAVBAR ================= -->
  <!-- ================= شريط التنقل ================= -->
-<nav class="navbar"> <h2 class="logo">Hamdi</h2>
+<nav class="navbar"> <h2 class="logo">WebFoundry</h2>
   <!-- Hamburger Menu -->
      <!-- قائمة الهمبرغر -->
 
@@ -81,7 +81,7 @@
     <li><a id="nav-projects"  href="#projects"><i  class="fas fa-project-diagram"></i> Projects</a></li>
     <li><a id="nav-my-services" href="#my-services"><i class="fas fa-concierge-bell"></i> My Services</a></li>
     <li><a id="nav-numbers"    href="#stats"><i  class="fas fa-chart-line"></i> Numbers</a></li>
-    <li><a id="nav-my-journey"  href="#my-journey"><i class="fas fa-route"></i> My Journey</a></li>
+    <li><a id="nav-Certificates"  href="#Certificates"><i class="fas fa-route"></i> Certificates</a></li>
     <li><a id="nav-currently-learning" href="#currently-learning"><i class="fas fa-book-reader"></i> Learning</a></li>
     <li><a id="nav-contact"   href="#contact"><i  class="fas fa-envelope"></i> Contact</a></li>
 
@@ -422,30 +422,44 @@
         <div class="projects-grid">
             
             <div class="project-card">
-                <div class="project-icon">
-                    <i class="fas fa-user-tie"></i>
+                <div class="project-thumb-wrap">
+                    <img class="project-thumb" src="assets/images/projects/personal-website.png" alt="Personal website screenshot">
                 </div>
-                <h3 id="projects-1text"  >personal website</h3>
-                <p id="projects-2text"  >A professional personal website built with HTML, CSS, and JS to showcase my skills and journey.</p>
-                <a href="#" id="projects-3text" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                <h3 id="projects-1text">personal website</h3>
+                <p id="projects-2text">A professional personal website built with HTML, CSS, and JS to showcase my skills and journey.</p>
+                <div class="project-tech">
+                    <span class="tech"><i class="fas fa-circle"></i> HTML</span>
+                    <span class="tech"><i class="fas fa-circle"></i> CSS</span>
+                    <span class="tech"><i class="fas fa-circle"></i> JavaScript</span>
+                </div><br>
+             <a href="#" id="projects-3text" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="project-card">
-                <div class="project-icon">
-                    <i class="fas fa-tasks"></i>
+                <div class="project-thumb-wrap">
+                    <img class="project-thumb" src="assets/images/projects/todo-app.svg" alt="To-Do App screenshot">
                 </div>
-                <h3 id="projects-4text" >To-Do Web App</h3>
-                <p id="projects-5text" >A functional task management app using JavaScript and LocalStorage for data persistence.</p>
-                <a href="#"  id="projects-6text" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                <h3 id="projects-4text">To-Do Web App</h3>
+                <p id="projects-5text">A functional task management app using JavaScript and LocalStorage for data persistence.</p>
+                <div class="project-tech">
+                    <span class="tech"><i class="fas fa-circle"></i> JavaScript</span>
+                    <span class="tech"><i class="fas fa-circle"></i> LocalStorage</span>
+                </div><br>
+             <a href="#" id="projects-6text" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="project-card">
-                <div class="project-icon">
-                    <i class="fas fa-blog"></i>
+                <div class="project-thumb-wrap">
+                    <img class="project-thumb" src="assets/images/projects/blog-cms.svg" alt="Blog CMS screenshot">
                 </div>
-                <h3 id="projects-7text" >Blog CMS</h3>
-                <p id="projects-8text" >A Content Management System for blogs developed with PHP and SQL for dynamic content.</p>
-                <a href="#" id="projects-9text"  class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                <h3 id="projects-7text">Blog CMS</h3>
+                <p id="projects-8text">A Content Management System for blogs developed with PHP and SQL for dynamic content.</p>
+                <div class="project-tech">
+                    <span class="tech"><i class="fas fa-circle"></i> PHP</span>
+                    <span class="tech"><i class="fas fa-circle"></i> MySQL</span>
+                    <span class="tech"><i class="fas fa-circle"></i> HTML</span>
+                </div><br>
+             <a href="#" id="projects-9text" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
             </div>
 
 
@@ -578,44 +592,37 @@
     </div>
 </section>
         
-    
-<!-- ================= My Journey Sector  ================= -->
-<!-- ================= قسم رحلتي   ================= -->
+<!-- ================= Certificates Sector ================= -->
+<!-- ================= قسم الشهادات   ================= -->
+<section id="certificates" class="container reveal">
+    <div class="info-card">
+        <h2 class="section-title">Certificates</h2>
+        <div class="projects-grid certificates-grid">
 
-<section id="my-journey" class="journey-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="main-title" id="Myjourney-title">My Journey</h2>
-            <div class="title-line"></div>
-        </div>
-
-        <div class="timeline-container">
-            <div class="timeline-item">
-                <div class="timeline-dot"><i class="fas fa-rocket"></i></div>
-                <div class="timeline-date">2022</div>
-                <div class="timeline-content">
-                    <h3 id="MyJourney-1text">The Spark</h3>
-                    <p id="MyJourney-2text">Started my journey into the world of programming with Python and JavaScript.</p>
+            <div class="project-card">
+                <div class="project-thumb-wrap">
+                    <img class="project-thumb" src="assets/images/certificates/cert1.jpeg" alt="Certificate 1">
                 </div>
+                <h3>Full-Stack Web Development</h3>
+                <p>Professional specialization covering frontend & backend development.</p>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-dot"><i class="fas fa-code"></i></div>
-                <div class="timeline-date">2024</div>
-                <div class="timeline-content">
-                    <h3 id="MyJourney-3text">Web Specialization</h3>
-                    <p id="MyJourney-4text">Focused on Frontend and Backend technologies to build full-stack apps.</p>
+            <div class="project-card">
+                <div class="project-thumb-wrap">
+                    <img class="project-thumb" src="assets/images/certificates/cert2.jpeg" alt="Certificate 2">
                 </div>
+                <h3>Frontend Development</h3>
+                <p>Focused on modern HTML, CSS and responsive JavaScript interfaces.</p>
             </div>
 
-            <div class="timeline-item highlight">
-                <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
-                <div class="timeline-date">2026</div>
-                <div class="timeline-content">
-                    <h3 id="MyJourney-5text">Graduation</h3>
-                    <p id="MyJourney-6text">Graduating from Taibah University as a Computer Science | As a full-stack web developer.</p>
+            <div class="project-card">
+                <div class="project-thumb-wrap">
+                    <img class="project-thumb" src="assets/images/certificates/cert3.jpeg" alt="Certificate 3">
                 </div>
+                <h3>Security Fundamentals</h3>
+                <p>Basics of web security, authentication, and secure deployment.</p>
             </div>
+
         </div>
     </div>
 </section>

@@ -1015,6 +1015,8 @@ body.dark .edu-meta span { color: #cbd5e1; }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+        box-shadow: 0 12px 30px rgba(2, 6, 23, 0.547);
+
 }
 
 /* Project Icon */
@@ -1032,6 +1034,27 @@ body.dark .edu-meta span { color: #cbd5e1; }
     font-size: 20px;
     margin-bottom: 20px;
 }
+
+/* Project thumbnail styling */
+.project-thumb-wrap {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    background: #e6eefc;
+    display: block;
+}
+
+.project-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* If a thumbnail is present, hide the small icon to avoid duplication */
+.project-thumb + .project-icon, .project-icon:empty { display: none; }
 
 .project-card h3 {
     font-size: 19px;
@@ -1071,15 +1094,54 @@ body.dark .edu-meta span { color: #cbd5e1; }
     
 }
 
+/* Project tech badges */
+.project-tech {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+.project-tech .tech {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16,185,129,0.08);
+    color: #0f172a;
+    padding: 6px 10px;
+    border-radius: 99px;
+    font-size: 13px;
+    border: 1px solid rgba(16,185,129,0.12);
+}
+.project-tech .tech i {
+    color: #03c383; /* green */
+    font-size: 0.6em;
+}
+
 body.dark .project-card {
-    background: #1e293b;
-    border-color: #334155;
+    background: #0b1220c0;
+    border-color: #1f2a3a;
+    box-shadow: 0 12px 36px rgba(12, 44, 187, 0.316);
 }
 body.dark .project-card h3 { color: #f1f5f9; }
-body.dark .project-icon { background: #1e293b; border: 1px solid #334155; }
+body.dark .project-icon { background: #0b1220; border: 1px solid #1f2a3a; }
+
+body.dark .project-thumb-wrap {
+    background: #071122;
+}
+
+/* Dark-mode styles for tech badges */
+body.dark .project-tech .tech {
+    background: rgba(16,185,129,0.06);
+    color: #d1fae5;
+    border: 1px solid rgba(16,185,129,0.18);
+}
+body.dark .project-tech .tech i {
+    color: #34d399; /* brighter green */
+}
 
 
-/* ========== Services Section Formatting =========== */
+
 /* ========== تنسيق قسم خدماتي   =========== */
 
 .services-grid {
@@ -1090,6 +1152,14 @@ body.dark .project-icon { background: #1e293b; border: 1px solid #334155; }
 }
 
 @media (max-width: 480px) {
+.project-link:hover {
+    gap: 12px;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #38bdf8;
+    box-shadow: 0 30px 60px -10px rgba(2,6,23,0.22);
+}
     .services-grid {
         grid-template-columns: 1fr;
         gap: 15px;

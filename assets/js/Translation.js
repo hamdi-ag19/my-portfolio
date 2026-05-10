@@ -13,9 +13,9 @@ const translations = {
     navSkills: "Skills",
     navEducation: "Education",
     navProjects: "Projects",
-    navMyServices: "My Services",
+    navMyServices: " Services",
     navNumbers: "Numbers",
-    navMyJourney: "My Journey",
+    navCertificates: " Certificates",
     navCurrentlyLearning: "Learning",
     navContact: "Contact",
 
@@ -94,13 +94,13 @@ const translations = {
     Numbers3text:"Technology skills ",
     Numbers4text:"Happy Clients",
 
-    MyJourneytitle:"My Journey",
-    MyJourney1text:"The Spark",
-    MyJourney2text:"Started my journey into the world of programming with Python and JavaScript.",
-    MyJourney3text:"Web Specialization",
-    MyJourney4text:"Focused on Frontend and Backend technologies to build full-stack apps.",
-    MyJourney5text:"Graduation",
-    MyJourney6text:"Graduating from Taibah University as a Computer Science | As a full-stack web developer.",
+   // MyJourneytitle:"My Journey",
+    //MyJourney1text:"The Spark",
+    //MyJourney2text:"Started my journey into the world of programming with Python and JavaScript.",
+    //MyJourney3text:"Web Specialization",
+    //MyJourney4text:"Focused on Frontend and Backend technologies to build full-stack apps.",
+    //MyJourney5text:"Graduation",
+    //MyJourney6text:"Graduating from Taibah University as a Computer Science | As a full-stack web developer.",
 
    CurrentlyLearningtitle:"Currently Learning",
    CurrentlyLearning1text:"Mastering Hooks, Context API & Redux",
@@ -138,7 +138,7 @@ const translations = {
     navProjects: "المشاريع",
     navMyServices: "خدماتي",
     navNumbers: "الأرقام",
-    navMyJourney: "رحلتي",
+    navCertificates: "الشهادات",
     navCurrentlyLearning: "أتعلم حالياً",
     navContact: "التواصل",
 
@@ -217,13 +217,13 @@ const translations = {
     Numbers3text:" المهرات  التكنولوجيا ",
     Numbers4text:"عملاء سعداء",
 
-    MyJourneytitle:"رحلتي",
-    MyJourney1text:"بدأت",
-    MyJourney2text:"بدأت رحلتي في عالم البرمجة باستخدام بايثون و JavaScript.",
-    MyJourney3text:"تخصص الويب",
-    MyJourney4text:"التركيز على تقنيات الواجهة الأمامية والخلفية لبناء تطبيقات متكاملة.",
-    MyJourney5text:"التخرج",
-    MyJourney6text:"التخرج من جامعة طيبة في علوم الحاسوب | كمطور ويب متكامل.",
+   // MyJourneytitle:"رحلتي",
+    //MyJourney1text:"بدأت",
+    //MyJourney2text:"بدأت رحلتي في عالم البرمجة باستخدام بايثون و JavaScript.",
+    //MyJourney3text:"تخصص الويب",
+    //MyJourney4text:"التركيز على تقنيات الواجهة الأمامية والخلفية لبناء تطبيقات متكاملة.",
+    //MyJourney5text:"التخرج",
+    //MyJourney6text:"التخرج من جامعة طيبة في علوم الحاسوب | كمطور ويب متكامل.",
 
    CurrentlyLearningtitle:" أتعلم حاليا",
    CurrentlyLearning1text:"إتقان الـ Hooks و Context API و Redux",
@@ -272,7 +272,7 @@ loader.classList.add("active");setTimeout(() => {
     document.getElementById("nav-projects").innerHTML = `<i class="fas fa-project-diagram"></i> ${t.navProjects}`;
     document.getElementById("nav-my-services").innerHTML = `<i class="fas fa-concierge-bell"></i> ${t.navMyServices}`;
     document.getElementById("nav-numbers").innerHTML = `<i class="fas fa-chart-line"></i> ${t.navNumbers}`;
-    document.getElementById("nav-my-journey").innerHTML = `<i class="fas fa-route"></i> ${t.navMyJourney}`;
+    document.getElementById("nav-Certificates").innerHTML = `<i class="fas fa-route"></i> ${t.navCertificates}`;
     document.getElementById("nav-currently-learning").innerHTML = `<i class="fas fa-book-reader"></i> ${t.navCurrentlyLearning}`;
     document.getElementById("nav-contact").innerHTML = `<i class="fas fa-envelope"></i> ${t.navContact}`;
 
@@ -352,13 +352,13 @@ loader.classList.add("active");setTimeout(() => {
   document.getElementById("Numbers-3text").textContent = t.Numbers3text;
   document.getElementById("Numbers-4text").textContent = t.Numbers4text;
 
-    document.getElementById("Myjourney-title").textContent = t.MyJourneytitle;
-    document.getElementById("MyJourney-1text").textContent = t.MyJourney1text;
-    document.getElementById("MyJourney-2text").textContent = t.MyJourney2text;
-    document.getElementById("MyJourney-3text").textContent = t.MyJourney3text;
-    document.getElementById("MyJourney-4text").textContent = t.MyJourney4text;
-    document.getElementById("MyJourney-5text").textContent = t.MyJourney5text;
-    document.getElementById("MyJourney-6text").textContent = t.MyJourney6text;
+   // document.getElementById("Myjourney-title").textContent = t.MyJourneytitle;
+   // document.getElementById("MyJourney-1text").textContent = t.MyJourney1text;
+   // document.getElementById("MyJourney-2text").textContent = t.MyJourney2text;
+   // document.getElementById("MyJourney-3text").textContent = t.MyJourney3text;
+    ///document.getElementById("MyJourney-4text").textContent = t.MyJourney4text;
+    //document.getElementById("MyJourney-5text").textContent = t.MyJourney5text;
+    //document.getElementById("MyJourney-6text").textContent = t.MyJourney6text;
 
     document.getElementById("CurrentlyLearning-title").textContent = t.CurrentlyLearningtitle;
     document.getElementById("CurrentlyLearning-1text").textContent = t.CurrentlyLearning1text;
