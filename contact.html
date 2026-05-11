@@ -13,6 +13,8 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico"> 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">    
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -39,7 +41,7 @@
   <nav class="navbar"> <h2 class="logo">WebFoundry
 </h2>
   <ul class="nav-links">
-    <li><a id="nav-home" href="index.html#home"><i class="fas fa-home"></i> Home</a></li>
+    <li><a id="nav-home" href="index.html"><i class="fas fa-home"></i> Home</a></li>
   </ul>
 
   <div class="nav-controls">
@@ -67,7 +69,14 @@
   </div>
 </nav>
 
-<!-- contact page uses desktop navbar design only (no mobile panel) -->
+<div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+
+</div>
+
 
 <div class="form-wrapper">
     </div>
@@ -107,6 +116,10 @@
         <textarea id="message" required name="message" class="input" style="height: 100px; padding-top: 15px;"></textarea>
         <span id="label-msg">Your Message</span>
     </label>
+
+    <div style="display:none;">
+    <input type="text" id="honeypot" tabindex="-1" autocomplete="off">
+</div>
 
     <button type="submit" class="submit" id="submit-btn">Send Message</button>
     

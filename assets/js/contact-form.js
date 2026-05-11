@@ -73,7 +73,7 @@ const translations = {
 function applyLanguage(lang) {
     const t = translations[lang];
 
-    document.getElementById("nav-home").textContent = t.navHome;
+   document.getElementById("nav-home").innerHTML = `<i class="fas fa-home"></i> ${t.navHome}`;
     document.getElementById("form-title").textContent = t.formTitle;
     document.getElementById("form-msg").textContent = t.formMsg;
     document.getElementById("label-fname").textContent = t.fname;
@@ -160,278 +160,205 @@ document.addEventListener("DOMContentLoaded", () => {
 window.onblur = function () { document.title = "Don't forget me! 💻"; }
 window.onfocus = function () { document.title = "Hamdi Al-Luqmani | Portfolio"; }
 
+
 // ===== Form Validation and Submission =====
 // ===== التحقق من صحة النموذج وإرساله =====
 
 const contactForm = document.getElementById("contact-form");
 const submitBtn = document.getElementById("submit-btn");
-
-// Get current language for validation messages
+//==== Function to get the current language ====
+// تحديد اللغة الحالية
 function getCurrentLang() {
     return localStorage.getItem("language") || "en";
 }
-
-// Show error message for a field
+//==== Function to show error (your original code) ====
+// دالة إظهار الخطأ (كودك الأصلي)
 function showError(fieldId, message) {
     const field = document.getElementById(fieldId);
-    const input = field.previousElementSibling || field.querySelector('input, textarea');
+    if (!field) return;
+    const input = field.previousElementSibling;
+    if (input) input.classList.add('invalid');
     
-    // Add invalid class to the input
-    if (input) {
-        input.classList.add('invalid');
-    }
-    
-    const existingError = field.parentNode.querySelector('.error-message');
-    
-    if (existingError) {
-        existingError.textContent = message;
-    } else {
-        const errorDiv = document.createElement('div');
+    let errorDiv = field.parentNode.querySelector('.error-message');
+    if (!errorDiv) {
+        errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
-        errorDiv.textContent = message;
         field.parentNode.appendChild(errorDiv);
     }
+    errorDiv.textContent = message;
 }
-
-// Clear error message for a field
+//==== Function to clear error (your original code) ====
+// دالة مسح الخطأ (كودك الأصلي)
 function clearError(fieldId) {
     const field = document.getElementById(fieldId);
-    const input = field.previousElementSibling || field.querySelector('input, textarea');
-    
-    // Remove invalid class from the input
-    if (input) {
-        input.classList.remove('invalid');
-    }
-    
+    if (!field) return;
+    const input = field.previousElementSibling;
+    if (input) input.classList.remove('invalid');
     const errorDiv = field.parentNode.querySelector('.error-message');
-    if (errorDiv) {
-        errorDiv.remove();
-    }
+    if (errorDiv) errorDiv.remove();
 }
-
-// Mark field as valid
+//==== Function to mark field as valid (your original code) ====
+// دالة تمييز الحقل كصحيح
 function markFieldValid(fieldId) {
     const field = document.getElementById(fieldId);
-    const input = field.previousElementSibling || field.querySelector('input, textarea');
-    
+    const input = field?.previousElementSibling;
     if (input) {
         input.classList.remove('invalid');
         input.classList.add('valid');
     }
 }
-
-// Validate email format
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Validate phone number (exactly 10 digits)
-function isValidPhone(phone) {
-    const phoneRegex = /^\d{10}$/;
-    return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
-}
-
-// Check if a field is valid
+//==== Functions to validate email and phone ====
+// فحص صحة البريد والهاتف
+function isValidEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+function isValidPhone(phone) { return /^\d{10}$/.test(phone.replace(/[\s\-\(\)]/g, '')); }
+//==== Function to check field validity (new - for real-time validation) ====
+// فحص صلاحية الحقل (جديد - للتحقق الفوري)
 function isFieldValid(fieldId, value, fieldType) {
     if (!value.trim()) return false;
-    
-    if (fieldType === 'email') {
-        return isValidEmail(value);
-    } else if (fieldType === 'phone') {
-        return isValidPhone(value);
-    } else if (fieldType === 'message') {
-        return value.trim().length >= 10;
-    }
-    
+    if (fieldType === 'email') return isValidEmail(value);
+    if (fieldType === 'phone') return isValidPhone(value);
+    if (fieldType === 'message') return value.trim().length >= 10;
     return true;
 }
-
-// Form validation
+//==== Comprehensive validation function on submit ====
+// دالة التحقق الشاملة عند الإرسال
 function validateForm() {
     const lang = getCurrentLang();
     const t = translations[lang];
     let isValid = true;
-    
-    // Clear previous errors
-    document.querySelectorAll('.error-message').forEach(error => error.remove());
-    
-    // Validate firstname
-    const firstname = document.getElementById('label-fname').previousElementSibling;
-    if (!firstname.value.trim()) {
-        showError('label-fname', t.requiredField);
-        isValid = false;
-    }
-    
-    // Validate lastname
-    const lastname = document.getElementById('label-lname').previousElementSibling;
-    if (!lastname.value.trim()) {
-        showError('label-lname', t.requiredField);
-        isValid = false;
-    }
-    
-    // Validate email
-    const email = document.getElementById('label-email').previousElementSibling;
-    if (!email.value.trim()) {
-        showError('label-email', t.requiredField);
-        isValid = false;
-    } else if (!isValidEmail(email.value)) {
-        showError('label-email', t.invalidEmail);
-        isValid = false;
-    }
-    
-    // Validate phone
-    const phone = document.getElementById('label-phone').previousElementSibling;
-    if (!phone.value.trim()) {
-        showError('label-phone', t.requiredField);
-        isValid = false;
-    } else if (!isValidPhone(phone.value)) {
-        showError('label-phone', t.invalidPhone);
-        isValid = false;
-    }
-    
-    // Validate message
-    const message = document.getElementById('label-msg').previousElementSibling;
-    if (!message.value.trim()) {
-        showError('label-msg', t.requiredField);
-        isValid = false;
-    } else if (message.value.trim().length < 10) {
-        showError('label-msg', t.messageTooShort);
-        isValid = false;
-    }
-    
+
+    const fields = [
+        { id: 'label-fname', type: 'text' },
+        { id: 'label-lname', type: 'text' },
+        { id: 'label-email', type: 'email' },
+        { id: 'label-phone', type: 'phone' },
+        { id: 'label-msg', type: 'message' }
+    ];
+
+    fields.forEach(f => {
+        const input = document.getElementById(f.id)?.previousElementSibling;
+        if (!input) return;
+        const val = input.value.trim();
+        
+        if (!val) {
+            showError(f.id, t.requiredField);
+            isValid = false;
+        } else if (f.type === 'email' && !isValidEmail(val)) {
+            showError(f.id, t.invalidEmail);
+            isValid = false;
+        } else if (f.type === 'phone' && !isValidPhone(val)) {
+            showError(f.id, t.invalidPhone);
+            isValid = false;
+        } else if (f.type === 'message' && val.length < 10) {
+            showError(f.id, t.messageTooShort);
+            isValid = false;
+        } else {
+            markFieldValid(f.id);
+        }
+    });
     return isValid;
 }
-
-// Show success message
-function showSuccessMessage(message) {
-    const feedbackContainer = document.getElementById('form-feedback');
-    feedbackContainer.innerHTML = '';
-    
-    const messageDiv = document.createElement('div');
-    messageDiv.className = 'form-message success';
-    messageDiv.textContent = message;
-    
-    feedbackContainer.appendChild(messageDiv);
-    feedbackContainer.style.display = 'block';
-    
-    // Auto-hide after 5 seconds
-    setTimeout(() => {
-        feedbackContainer.style.display = 'none';
-        feedbackContainer.innerHTML = '';
-    }, 5000);
-}
-
-// Show error message
-function showErrorMessage(message) {
-    const feedbackContainer = document.getElementById('form-feedback');
-    feedbackContainer.innerHTML = '';
-    
-    const messageDiv = document.createElement('div');
-    messageDiv.className = 'form-message error';
-    messageDiv.textContent = message;
-    
-    feedbackContainer.appendChild(messageDiv);
-    feedbackContainer.style.display = 'block';
-    
-    // Auto-hide after 5 seconds
-    setTimeout(() => {
-        feedbackContainer.style.display = 'none';
-        feedbackContainer.innerHTML = '';
-    }, 5000);
-}
-
-// Handle form submission
+//==== Function to handle form submission with SweetAlert2 and dark mode support ====
+// معالجة إرسال النموذج مع SweetAlert2 والدارك مود
 async function handleFormSubmission(event) {
     event.preventDefault();
-    
-    if (!validateForm()) {
-        return;
-    }
+    //==== Bot prevention (honeypot) ====
+    // منع البوتات
+    if (document.getElementById('honeypot')?.value) return;
+
+    if (!validateForm()) return;
     
     const lang = getCurrentLang();
     const t = translations[lang];
-    
-    // Disable submit button and show loading state
-    submitBtn.disabled = true;
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = t.sending;
-    
+    const isDarkMode = document.body.classList.contains('dark');
+
+    Swal.fire({
+        title: lang === 'ar' ? 'جاري الإرسال...' : 'Sending...',
+        background: isDarkMode ? '#1e293b' : '#fff',
+        color: isDarkMode ? '#f1f5f9' : '#475569',
+        allowOutsideClick: false,
+        didOpen: () => { Swal.showLoading(); }
+    });
+
     try {
-        const formData = new FormData(contactForm);
         const response = await fetch(contactForm.action, {
             method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
+            body: new FormData(contactForm),
+            headers: { 'Accept': 'application/json' }
         });
-        
+
         if (response.ok) {
-            // Success
             contactForm.reset();
-            showSuccessMessage(t.success);
-        } else {
-            // Error
-            throw new Error('Form submission failed');
-        }
-    } catch (error) {
-        console.error('Form submission error:', error);
-        showErrorMessage(t.error);
-    } finally {
-        // Re-enable submit button
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
+            document.querySelectorAll('.valid').forEach(el => el.classList.remove('valid'));
+if (response.ok) {
+
+    Swal.fire({
+        icon: 'success',
+        title: lang === 'ar' ? 'تم استلام رسالتك!' : 'Message Received!',
+        text: lang === 'ar' ? 'شكراً لتواصلك ، سأرد عليك خلال 24 ساعة.' : 'Thanks for reaching out! I will reply within 24 hours.',
+        background: isDarkMode ? '#1e293b' : '#fff',
+        color: isDarkMode ? '#f1f5f9' : '#475569',
+        confirmButtonColor: '#38bdf8'
+    });
+    contactForm.reset();
+}
+        } else { throw new Error(); }
+    } catch (e) {
+        Swal.fire({
+            icon: 'error',
+            title: lang === 'ar' ? 'فشل الإرسال' : 'Error',
+            text: t.error,
+            background: isDarkMode ? '#1e293b' : '#fff',
+            color: isDarkMode ? '#f1f5f9' : '#475569',
+            confirmButtonColor: '#ef4444'
+        });
     }
 }
-
-// Add form event listeners
+//==== Setting up listeners on load (real-time validation while typing) ====
+// إعداد المستمعات عند التحميل (التحقق الفوري أثناء الكتابة)
 document.addEventListener("DOMContentLoaded", () => {
-    const savedLang = localStorage.getItem("language") || "en";
-    applyLanguage(savedLang);
-    
-    // Add form submission handler
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleFormSubmission);
-    }
-    
-    // Real-time validation on input and blur
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', handleFormSubmission);
+
     const inputs = contactForm.querySelectorAll('input, textarea');
     inputs.forEach(input => {
-        // Real-time validation as user types
+        //==== Real-time validation while typing ====
+        // التحقق أثناء الكتابة
         input.addEventListener('input', () => {
-            const labelId = input.nextElementSibling.id;
-            const fieldType = input.type === 'email' ? 'email' : input.type === 'tel' ? 'phone' : input.name === 'message' ? 'message' : 'text';
-            
-            // Remove invalid state when user starts typing
+            const labelId = input.nextElementSibling?.id;
+            if (!labelId) return;
+
+            const fieldType = input.type === 'email' ? 'email' : 
+                            (input.type === 'tel' || input.id.includes('phone')) ? 'phone' : 
+                            input.tagName === 'TEXTAREA' ? 'message' : 'text';
+
             if (input.classList.contains('invalid')) {
                 clearError(labelId);
             }
-            
-            // Check if field is now valid
+
             if (input.value.trim() && isFieldValid(labelId, input.value, fieldType)) {
                 markFieldValid(labelId);
-            } else if (input.classList.contains('valid')) {
-                // Remove valid class if it no longer meets criteria
+            } else {
                 input.classList.remove('valid');
             }
         });
-        
-        // Validate on blur
+//==== Validation on blur (when leaving the field) ====
+        // التحقق عند ترك الحقل (Blur)
         input.addEventListener('blur', () => {
-            const labelId = input.nextElementSibling.id;
-            const fieldType = input.type === 'email' ? 'email' : input.type === 'tel' ? 'phone' : input.name === 'message' ? 'message' : 'text';
-            
+            const labelId = input.nextElementSibling?.id;
+            if (!labelId) return;
+
+            const fieldType = input.type === 'email' ? 'email' : 
+                            (input.type === 'tel' || input.id.includes('phone')) ? 'phone' : 
+                            input.tagName === 'TEXTAREA' ? 'message' : 'text';
+
             if (!input.value.trim()) {
                 input.classList.remove('valid');
-                const lang = getCurrentLang();
-                const t = translations[lang];
-                showError(labelId, t.requiredField);
+                showError(labelId, translations[getCurrentLang()].requiredField);
             } else if (isFieldValid(labelId, input.value, fieldType)) {
                 markFieldValid(labelId);
             }
         });
     });
-    
-    // No mobile nav on contact page; desktop navbar only
 });

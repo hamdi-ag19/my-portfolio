@@ -12,6 +12,16 @@ img {
     height: auto;
 }
 
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+
 * {margin:0; padding:0; box-sizing:border-box;}
 body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f8fafc; color:#475569; line-height:1.7; padding-top:70px; transition:background 0.3s, color 0.3s;}
 a{text-decoration:none; transition: color 0.3s;}
