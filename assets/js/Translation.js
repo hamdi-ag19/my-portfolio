@@ -56,16 +56,20 @@ const translations = {
     education4text: "Expert student",
     education5text: "Focusing on Software Engineering, Data Structures, and Modern Web Technologies.",
 
-    projectsTitle: " Featured Projects",
+    projectsTitle: "Projects",
     projects1text: "personal website",
     projects2text: "A professional personal website built with HTML, CSS, and JS to showcase my skills and journey.",
     projects3text: "View Project",
-    projects4text: "To-Do Web App",
-    projects5text: "A functional task management app using JavaScript and LocalStorage for data persistence.",
+    projects4text: "Mines-vs-Treasure---Game",
+    projects5text: "It is the Mines vs Treasure game --- a game where you must survive the mines and find the treasure, developed using JavaScript.",
     projects6text: "View Project",
     projects7text: "Blog CMS",
     projects8text: "A Content Management System for blogs developed with PHP and SQL for dynamic content.",
     projects9text: "View Project",
+
+    upcomingProjectsTitle: "More Coming Soon",
+    upcomingProjectsText: "New projects  are being added — check back soon.",
+      upcomingLabel: "Coming Soon",
 
     MyServicestitle:"My Services",
     MyServices1text:"Web Development",
@@ -101,6 +105,10 @@ const translations = {
     //MyJourney4text:"Focused on Frontend and Backend technologies to build full-stack apps.",
     //MyJourney5text:"Graduation",
     //MyJourney6text:"Graduating from Taibah University as a Computer Science | As a full-stack web developer.",
+
+    upcomingLabelcerts:"Coming Soon",
+    upcomingcertstitle:"More Coming Soon",
+    upcomingcertstext:"New  certificates are being added — check back soon.",
 
    CurrentlyLearningtitle:"Currently Learning",
    CurrentlyLearning1text:"Mastering Hooks, Context API & Redux",
@@ -179,16 +187,20 @@ const translations = {
     education4text: "طالب خبير",
     education5text: "التركيز على هندسة البرمجيات، هياكل البيانات، وتقنيات الويب الحديثة.",
 
-    projectsTitle: "المشاريع المستقبلية",
+    projectsTitle: "المشاريع",
     projects1text: "موقع شخصي",
     projects2text: "موقع شخصي احترافي تم بناؤه باستخدام HTML وCSS وJS لعرض مهاراتي ورحلتي.",
     projects3text: "عرض المشروع ",
-    projects4text: "تطبيق ويب للمهام",
-    projects5text: "تطبيق إدارة مهام وظيفي باستخدام JavaScript وLocalStorage لحفظ البيانات.",
+    projects4text: "لعبة Mines vs Treasure",
+    projects5text: "لعبة Mines vs Treasure --- لعبة حيث يجب عليك البقاء على قيد الحياة وتجد الكنز, تم تطويرها باستخدام JavaScript.",
     projects6text: "عرض المشروع",
     projects7text: "نظام إدارة محتوى المدونات",
     projects8text: "نظام لإدارة المحتوى للمدونات تم تطويره باستخدام PHP و SQL للمحتوى الديناميكي.",
     projects9text: "عرض المشروع",
+
+    upcomingProjectsTitle: "المزيد قادم قريبًا",
+    upcomingProjectsText: "يتم إضافة مشاريع  جديدة —  قريبًا.",
+      upcomingLabel: "المزيد قادم",
 
     MyServicestitle:"خدماتي",
     MyServices1text:"تطوير الويب",
@@ -224,6 +236,10 @@ const translations = {
     //MyJourney4text:"التركيز على تقنيات الواجهة الأمامية والخلفية لبناء تطبيقات متكاملة.",
     //MyJourney5text:"التخرج",
     //MyJourney6text:"التخرج من جامعة طيبة في علوم الحاسوب | كمطور ويب متكامل.",
+
+   upcomingLabelcerts:"قريبًا",
+   upcomingcertstitle:"المزيد قادم قريبًا",
+    upcomingcertstext:"يتم إضافة شهادات جديدة —  قريبًا.",
 
    CurrentlyLearningtitle:" أتعلم حاليا",
    CurrentlyLearning1text:"إتقان الـ Hooks و Context API و Redux",
@@ -323,6 +339,11 @@ loader.classList.add("active");setTimeout(() => {
   document.getElementById("projects-8text").textContent = t.projects8text;
   document.getElementById("projects-9text").textContent = t.projects9text;
 
+    document.getElementById("upcoming-ribbon-projects").textContent = t.upcomingLabel;
+  document.getElementById("upcoming-projects-title").textContent = t.upcomingProjectsTitle;
+  document.getElementById("upcoming-projects-text").textContent = t.upcomingProjectsText;
+
+  
   document.getElementById("MyServices-title").textContent = t.MyServicestitle;
   document.getElementById("MyServices-1text").textContent = t.MyServices1text;
   document.getElementById("MyServices-2text").textContent = t.MyServices2text;
@@ -359,6 +380,11 @@ loader.classList.add("active");setTimeout(() => {
     ///document.getElementById("MyJourney-4text").textContent = t.MyJourney4text;
     //document.getElementById("MyJourney-5text").textContent = t.MyJourney5text;
     //document.getElementById("MyJourney-6text").textContent = t.MyJourney6text;
+      
+  document.getElementById("upcoming-ribbon-certs").textContent = t.upcomingLabelcerts;
+  document.getElementById("upcoming-certs-title").textContent = t.upcomingcertstitle;
+  document.getElementById("upcoming-certs-text").textContent = t.upcomingcertstext;
+
 
     document.getElementById("CurrentlyLearning-title").textContent = t.CurrentlyLearningtitle;
     document.getElementById("CurrentlyLearning-1text").textContent = t.CurrentlyLearning1text;

@@ -89,7 +89,7 @@
   <div class="nav-controls">
     <button id="lang-toggle" class="lang-btn" aria-label="Switch Language">
       <i class="fas fa-globe"></i>
-      <span id="lang-text">EN</span>
+      <span id="lang-text">🌐 EN</span>
     </button>
 
     <label class="theme-switch">
@@ -110,7 +110,6 @@
     </label>
   </div>
 </nav>
-    </ul>
 
 <!-- Mobile nav backdrop for closing side panel -->
 <div id="nav-backdrop" class="nav-backdrop" aria-hidden="true"></div>
@@ -419,12 +418,13 @@
 
 <section id="projects" class="container reveal">
     <div class="info-card">
-        <h2 id="projects-title"  class="section-title">Featured Projects</h2>
+        <h2 id="projects-title"  class="section-title"> Projects</h2>
         <div class="projects-grid">
             
             <div class="project-card">
                 <div class="project-thumb-wrap">
                     <img class="project-thumb" src="assets/images/projects/personal-website.png" alt="Personal website screenshot">
+                        <div class="thumb-overlay"><i class="fas fa-search-plus" aria-hidden="true"></i></div>
                 </div>
                 <h3 id="projects-1text">personal website</h3>
                 <p id="projects-2text">A professional personal website built with HTML, CSS, and JS to showcase my skills and journey.</p>
@@ -438,20 +438,21 @@
 
             <div class="project-card">
                 <div class="project-thumb-wrap">
-                    <img class="project-thumb" src="assets/images/projects/todo-app.svg" alt="To-Do App screenshot">
+                    <img class="project-thumb" src="assets/images/projects/Mines-vs-Treasure---Game.png" alt="Mines vs Treasure game screenshot">
                 </div>
-                <h3 id="projects-4text">To-Do Web App</h3>
-                <p id="projects-5text">A functional task management app using JavaScript and LocalStorage for data persistence.</p>
+                <h3 id="projects-4text">Mines-vs-Treasure---Game</h3>
+                <p id="projects-5text">It is the Mines vs Treasure game --- a game where you must survive the mines and find the treasure, developed using JavaScript.</p>
                 <div class="project-tech">
                     <span class="tech"><i class="fas fa-circle"></i> JavaScript</span>
-                    <span class="tech"><i class="fas fa-circle"></i> LocalStorage</span>
-                </div><br>
-             <a href="#" id="projects-6text" class="project-link btn btn-primary small-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                    <span class="tech"><i class="fas fa-circle"></i> HTML</span>
+                    <span class="tech"><i class="fas fa-circle"></i> CSS</span>                </div><br>
+             <a href="https://hamdi-ag19.github.io/Mines-vs-Treasure---Game/index.html" id="projects-6text" class="project-link btn btn-primary small-btn">View Project <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="project-card">
                 <div class="project-thumb-wrap">
                     <img class="project-thumb" src="assets/images/projects/blog-cms.svg" alt="Blog CMS screenshot">
+                        <div class="thumb-overlay"><i class="fas fa-search-plus" aria-hidden="true"></i></div>
                 </div>
                 <h3 id="projects-7text">Blog CMS</h3>
                 <p id="projects-8text">A Content Management System for blogs developed with PHP and SQL for dynamic content.</p>
@@ -463,10 +464,78 @@
              <a href="#" id="projects-9text" class="project-link btn btn-primary small-btn">View Project <i class="fas fa-arrow-right"></i></a>
             </div>
 
+            <!-- Coming Soon card -->
+                <!-- بطاقة قادمة قريبًا -->
+            <div class="project-card upcoming-card">
+                <div class="ribbon" id="upcoming-ribbon-projects">Coming Soon</div>
+                <div class="project-thumb-wrap">
+                    <div class="upcoming-thumb">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <h3 id="upcoming-projects-title">More Coming Soon</h3>
+                <p id="upcoming-projects-text">New projects and certificates are being added — check back soon.</p>
+            </div>
+
 
         </div>
     </div>
 </section>
+
+<!-- ================= Certificates Sector ================= -->
+<!-- ================= قسم الشهادات   ================= -->
+<section id="Certificates" class="container reveal">
+    <div class="info-card">
+        <h2 class="section-title">Certificates</h2>
+        <div class="projects-grid certificates-grid">
+
+            <div class="project-card">
+                <div class="project-thumb-wrap">
+                    <img class="project-thumb" src="assets/images/certificates/cert1.jpeg" alt="Certificate 1">
+                        <div class="thumb-overlay"><i class="fas fa-search-plus" aria-hidden="true"></i></div>
+                </div>
+                <h3>Full-Stack Web Development</h3>
+                <p>Professional specialization covering frontend & backend development.</p>
+                <button class="btn btn-primary small-btn view-cert-btn" data-src="assets/images/certificates/cert1.jpeg" aria-label="View Full-Stack Web Development Certificate">View Certificate</button>
+            </div>
+
+            <div class="project-card">
+                <div class="project-thumb-wrap">
+                    <img class="project-thumb" src="assets/images/certificates/cert2.jpeg" alt="Certificate 2">
+                        <div class="thumb-overlay"><i class="fas fa-search-plus" aria-hidden="true"></i></div>
+                </div>
+                <h3>Frontend Development</h3>
+                <p>Focused on modern HTML, CSS and responsive JavaScript interfaces.</p>
+                <button class="btn btn-primary small-btn view-cert-btn" data-src="assets/images/certificates/cert2.jpeg" aria-label="View Frontend Development Certificate">View Certificate</button>
+            </div>
+
+            <div class="project-card">
+                <div class="project-thumb-wrap">
+                    <img class="project-thumb" src="assets/images/certificates/cert3.jpeg" alt="Certificate 3">
+                        <div class="thumb-overlay"><i class="fas fa-search-plus" aria-hidden="true"></i></div>
+                </div>
+                <h3>Security Fundamentals</h3>
+                <p>Basics of web security, authentication, and secure deployment.</p>
+                <button class="btn btn-primary small-btn view-cert-btn" data-src="assets/images/certificates/cert3.jpeg" aria-label="View Security Fundamentals Certificate">View Certificate</button>
+            </div>
+
+            <!-- Coming Soon card for certificates -->
+             <!-- بطاقة قادمة قريبًا للشهادات -->
+            <div class="project-card upcoming-card">
+                <div class="ribbon" id="upcoming-ribbon-certs">Coming Soon</div>
+                <div class="project-thumb-wrap">
+                    <div class="upcoming-thumb">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <h3 id="upcoming-certs-title">Certificates Coming Soon</h3>
+                <p id="upcoming-certs-text">More certificates will be uploaded here shortly.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 
 <!-- ================= My Services Sector  ================= -->
 <!-- ================= قسم خدماتي  ================= -->
@@ -543,12 +612,10 @@
 </div>
 
         </div><br><br>
-        <a href="#contact" class="cta-banner-link">
-        <div class="cta-banner">
+        <a href="#contact" id="contact-cta-link" class="project-link btn btn-primary small-btn cta-banner-link">
             <span id="contact-cta-text">For services, please contact me</span>
             <i class="fas fa-external-link-alt"></i>
-        </div>
-    </a>
+        </a>
     </div>
 
 </section>
@@ -593,43 +660,6 @@
     </div>
 </section>
         
-<!-- ================= Certificates Sector ================= -->
-<!-- ================= قسم الشهادات   ================= -->
-<section id="certificates" class="container reveal">
-    <div class="info-card">
-        <h2 class="section-title">Certificates</h2>
-        <div class="projects-grid certificates-grid">
-
-            <div class="project-card">
-                <div class="project-thumb-wrap">
-                    <img class="project-thumb" src="assets/images/certificates/cert1.jpeg" alt="Certificate 1">
-                </div>
-                <h3>Full-Stack Web Development</h3>
-                <p>Professional specialization covering frontend & backend development.</p>
-                <button class="btn btn-primary small-btn view-cert-btn" data-src="assets/images/certificates/cert1.jpeg" aria-label="View Full-Stack Web Development Certificate">View Certificate</button>
-            </div>
-
-            <div class="project-card">
-                <div class="project-thumb-wrap">
-                    <img class="project-thumb" src="assets/images/certificates/cert2.jpeg" alt="Certificate 2">
-                </div>
-                <h3>Frontend Development</h3>
-                <p>Focused on modern HTML, CSS and responsive JavaScript interfaces.</p>
-                <button class="btn btn-primary small-btn view-cert-btn" data-src="assets/images/certificates/cert2.jpeg" aria-label="View Frontend Development Certificate">View Certificate</button>
-            </div>
-
-            <div class="project-card">
-                <div class="project-thumb-wrap">
-                    <img class="project-thumb" src="assets/images/certificates/cert3.jpeg" alt="Certificate 3">
-                </div>
-                <h3>Security Fundamentals</h3>
-                <p>Basics of web security, authentication, and secure deployment.</p>
-                <button class="btn btn-primary small-btn view-cert-btn" data-src="assets/images/certificates/cert3.jpeg" aria-label="View Security Fundamentals Certificate">View Certificate</button>
-            </div>
-
-        </div>
-    </div>
-</section>
 
 <!-- ================= Currently Learning Sector  ================= -->
 <!-- ================= قسم التعلم الحلي   ================= -->
@@ -691,8 +721,8 @@
         <p id="contact-2text"   class="contact-desc">If you have any questions or want to work together, feel free to reach out!</p>
 
             <div class="contact-action">
-                <a href="contact.html" class="main-btn">
-                    <span id="contact-message" >Send a Message</span>
+                <a href="contact.html" class="btn btn-primary medium-btn project-link" id="contact-message-link">
+                    <span id="contact-message">Send a Message</span>
                     <i class="fas fa-paper-plane"></i>
                 </a>
             </div>

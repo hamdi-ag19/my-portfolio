@@ -418,7 +418,19 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Open modal when clicking on a project thumbnail image
+    // Open modal when clicking the overlay (icon) or on a project thumbnail image
+    const overlay = e.target.closest('.thumb-overlay');
+    if (overlay && overlay.closest('.project-card')) {
+      e.preventDefault();
+      const wrap = overlay.closest('.project-thumb-wrap');
+      const img = wrap ? wrap.querySelector('.project-thumb') : null;
+      const src = img ? (img.getAttribute('data-src') || img.src) : null;
+      if (src) openModal(src, img || overlay);
+      return;
+    }
+
+    // Open modal when clicking on the image itself
+    //كشف النموذج عند النقر على الصورة نفسها
     const thumb = e.target.closest('.project-thumb');
     if (thumb && thumb.closest('.project-card')) {
       e.preventDefault();

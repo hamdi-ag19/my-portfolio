@@ -15,7 +15,6 @@ const translations = {
         message: "Your Message",
         submit: "Send Message",
         
-        btn: "🌐 AR",
    
         footerDesc: "Crafting digital experiences with passion.",
         footerCopy: "Hamdi Al-Luqmani. All rights reserved.© 2026",
@@ -48,7 +47,6 @@ const translations = {
         message: "رسالتك",
         submit: "إرسال الرسالة",
        
-        btn: "🌐 EN",
        
         footerDesc: "صناعة تجارب رقمية بشغف وإتقان.",
         footerCopy: " حمدي اللقماني. جميع الحقوق محفوظة. © 2026 ",
@@ -94,7 +92,24 @@ function applyLanguage(lang) {
     document.getElementById("footer-Connect").textContent = t.footerConnect;
 
 
-    langBtn.textContent = t.btn;
+    // Update language button icon/text for accessibility
+    if (langBtn) {
+        const icon = langBtn.querySelector('.lang-ico');
+        const textEl = langBtn.querySelector('.lang-text');
+        if (lang === 'ar') {
+            if (icon) icon.className = 'fas fa-language lang-ico';
+            if (textEl) textEl.textContent = 'EN';
+            langBtn.setAttribute('aria-pressed', 'true');
+            langBtn.setAttribute('title', 'Switch to English');
+            langBtn.setAttribute('aria-label', 'Switch language to English');
+        } else {
+            if (icon) icon.className = 'fas fa-language lang-ico';
+            if (textEl) textEl.textContent = 'AR';
+            langBtn.setAttribute('aria-pressed', 'false');
+            langBtn.setAttribute('title', 'التبديل إلى العربية');
+            langBtn.setAttribute('aria-label', 'التبديل إلى العربية');
+        }
+    }
     localStorage.setItem("language", lang);
 
     if (lang === "ar") {

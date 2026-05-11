@@ -1019,6 +1019,82 @@ body.dark .edu-meta span { color: #cbd5e1; }
 
 }
 
+.project-card { position: relative; }
+
+/* Thumbnail hover overlay */
+.project-thumb-wrap { position: relative; }
+.thumb-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(2,6,23,0) 40%, rgba(0,0,0,0.45));
+    opacity: 0;
+    transition: opacity 200ms ease, transform 200ms ease;
+}
+.project-card:hover .thumb-overlay { opacity: 1; }
+.thumb-overlay i {
+    color: #fff;
+    font-size: 28px;
+    background: rgba(0,0,0,0.36);
+    padding: 12px;
+    border-radius: 999px;
+    box-shadow: 0 10px 24px rgba(2,6,23,0.24);
+}
+
+/* Coming ribbon for placeholder cards */
+.upcoming-card .ribbon {
+    position: absolute;
+    top: 12px;
+    right: -40px;
+    transform: rotate(22deg);
+    background: linear-gradient(135deg,#06b6d4,#0891b2);
+    color: #fff;
+    padding: 6px 64px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(2,6,23,0.08);
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* Upcoming / placeholder card */
+.upcoming-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #64748b;
+    background: linear-gradient(180deg, rgba(245,247,250,0.6), rgba(255,255,255,0.6));
+    border-style: dashed;
+}
+.upcoming-card .upcoming-thumb {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    background: transparent;
+}
+.upcoming-card .upcoming-thumb i {
+    display: inline-block;
+    background: linear-gradient(135deg,#eff6ff,#e0f2fe);
+    color: #0969a9;
+    width: 96px;
+    height: 96px;
+    line-height: 96px;
+    border-radius: 12px;
+    box-shadow: 0 10px 22px rgba(2,6,23,0.06);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.upcoming-card .upcoming-thumb i:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 18px 36px rgba(2,6,23,0.12); }
+.upcoming-card { transition: transform 0.28s ease, box-shadow 0.28s ease; }
+.upcoming-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(2,6,23,0.08); }
+.upcoming-card h3 { color: #0f172a; margin-top: 12px; }
+.upcoming-card p { margin-bottom: 8px; color: #6b7280; }
+
 /* Project Icon */
 /* أيقونة المشروع */
 
@@ -1252,32 +1328,6 @@ body.dark .service-item h3 { color: #f1f5f9; }
 body.dark .service-item p { color: #94a3b8; }
 body.dark .service-item:hover { background: #243049; }
 
-.cta-banner {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8); 
-    color: #ffffff;
-    padding: 12px 30px;
-    border-radius: 50px; 
-    font-size: 1rem;
-        height: 160px;
-    border: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-    text-decoration: none;
-}
-
-.cta-banner-link:hover .cta-banner {
-    transform: translateY(-3px);
-    background: linear-gradient(135deg, #1d4ed8, #1e40af);
-    box-shadow: 0 15px 25px rgba(37, 99, 235, 0.4);
-}
-
-body.dark .cta-banner {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
-}
 
 /* ========== Achievements Section Formatting =========== */
 /* ========== تنسيق قسم  الارقام   =========== */
@@ -1786,23 +1836,14 @@ body.dark .progress-container { background: #334155; }
 /* Primary send button */
 /* زر الإرسال الأساسي */
 
-.main-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: white !important;
-    padding: 15px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-    transition: 0.3s;
+.btn.medium-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 24px;
 }
 
-.main-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+.btn.medium-btn.btn-primary {
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.28);
 }
 
 .contact-wrapper {
@@ -2456,20 +2497,12 @@ body.rtl {
 /*======= Language Button Professional ========= */
 /*======= زر اللغة الاحترافي ========= */
 
-.lang-btn  {
-  background: linear-gradient(135deg,#2563eb,#38bdf8);
-  border: none;
-  padding: 6px 14px;
-  border-radius: 20px;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
+
 
 .lang-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(37,99,235,0.4);
+  transform: scale(1.05)!important;
+  box-shadow: 0 5px 15px rgba(37, 100, 235, 0.586)!important;
+  border-radius: 550px!important;
 }
 
 /* Scroll Progress Bar */

@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="1200" height="800" fill="#f0fbf7"/>
-  <g fill="#064e3b" font-family="Cairo, Arial, sans-serif" font-weight="700">
-    <text x="50%" y="45%" font-size="44" text-anchor="middle">To-Do App</text>
-    <text x="50%" y="55%" font-size="20" text-anchor="middle" fill="#14532d">Screenshot placeholder</text>
-  </g>
-</svg>
