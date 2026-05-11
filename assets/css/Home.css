@@ -1036,24 +1036,52 @@ body.dark .edu-meta span { color: #cbd5e1; }
 }
 
 /* Project thumbnail styling */
+/* تنسيق صورة المشروع المصغرة */
 .project-thumb-wrap {
     width: 100%;
-    height: 160px;
+    aspect-ratio: 16/9;
+    max-height: 520px;
     overflow: hidden;
-    border-radius: 12px;
     margin-bottom: 16px;
-    background: #e6eefc;
+    background: transparent;
     display: block;
+}
+
+/* Larger thumbnail container for certificates (still landscape) */
+.certificates-grid .project-thumb-wrap {
+    aspect-ratio: 16/9;
+    max-height: 600px;
 }
 
 .project-thumb {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     display: block;
 }
 
-/* If a thumbnail is present, hide the small icon to avoid duplication */
+/* indicate image is clickable */
+.project-thumb { cursor: zoom-in; }
+
+/* When project link also uses btn classes, ensure it renders as a button */
+.project-link.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.project-link.btn .fas { margin-left: 6px; }
+
+/* small button variant to match site format but compact */
+.btn.small-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 12px;
+}
+
+
 .project-thumb + .project-icon, .project-icon:empty { display: none; }
 
 .project-card h3 {
@@ -1095,6 +1123,7 @@ body.dark .edu-meta span { color: #cbd5e1; }
 }
 
 /* Project tech badges */
+/* شارات تقنيات المشروع */
 .project-tech {
     display: flex;
     gap: 10px;
@@ -1114,7 +1143,7 @@ body.dark .edu-meta span { color: #cbd5e1; }
     border: 1px solid rgba(16,185,129,0.12);
 }
 .project-tech .tech i {
-    color: #03c383; /* green */
+    color: #03c383; 
     font-size: 0.6em;
 }
 
@@ -1137,7 +1166,7 @@ body.dark .project-tech .tech {
     border: 1px solid rgba(16,185,129,0.18);
 }
 body.dark .project-tech .tech i {
-    color: #34d399; /* brighter green */
+    color: #34d399; 
 }
 
 
@@ -1232,7 +1261,7 @@ body.dark .service-item:hover { background: #243049; }
     padding: 12px 30px;
     border-radius: 50px; 
     font-size: 1rem;
-    font-weight: 600;
+        height: 160px;
     border: none;
     transition: all 0.3s ease;
     box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
@@ -1375,6 +1404,76 @@ body.dark .achievements-section-v2 {
     .achievements-cards-wrapper {
         grid-template-columns: 1fr !important;
     }
+}
+
+/* View certificate button and modal styles */
+.view-cert-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: linear-gradient(135deg,#10b981,#06b6d4);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.view-cert-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(6,95,70,0.12); }
+
+.cert-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(2,6,23,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+.cert-modal {
+    max-width: calc(100% - 48px);
+    max-height: calc(100% - 48px);
+    background: transparent;
+    border-radius: 8px;
+    overflow: auto;
+    position: relative;
+    display: block;
+}
+.cert-modal img {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    max-width: 100%;
+    max-height: calc(100vh - 120px);
+    object-fit: contain;
+    border-radius: 6px;
+}
+.cert-modal-close {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    background: rgba(255,255,255,0.95);
+    color: #0f172a;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 3100;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(2,6,23,0.12);
+    font-size: 18px;
+}
+.cert-modal-close:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(2,6,23,0.18); }
+.cert-modal-close:focus { outline: 3px solid rgba(37,99,235,0.18); }
+
+body.dark .cert-modal-close {
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
 
 

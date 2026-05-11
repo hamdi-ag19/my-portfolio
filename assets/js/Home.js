@@ -370,3 +370,71 @@ window.addEventListener('scroll', function() {
 // ===== عنوان الصفحة الديناميكي =====
 window.onblur = function () { document.title = "Don't forget me! 💻"; }
 window.onfocus = function () { document.title = "Hamdi Al-Luqmani | Portfolio"; }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modalBackdrop = document.createElement('div');
+  modalBackdrop.className = 'cert-modal-backdrop';
+  modalBackdrop.style.display = 'none';
+  modalBackdrop.setAttribute('aria-hidden', 'true');
+
+  modalBackdrop.innerHTML = `
+    <div class="cert-modal" role="dialog" aria-modal="true">
+      <button class="cert-modal-close" aria-label="Close certificate" title="Close">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <img src="" alt="Certificate" class="cert-modal-img" loading="lazy">
+    </div>`;
+
+  document.body.appendChild(modalBackdrop);
+
+  const modalImg = modalBackdrop.querySelector('.cert-modal-img');
+  const closeBtn = modalBackdrop.querySelector('.cert-modal-close');
+  let lastFocused = null;
+
+  const openModal = (src, trigger) => {
+    lastFocused = trigger || document.activeElement;
+    modalImg.src = src;
+    modalBackdrop.style.display = 'flex';
+    modalBackdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  };
+
+  const closeModal = () => {
+    modalBackdrop.style.display = 'none';
+    modalBackdrop.setAttribute('aria-hidden', 'true');
+    modalImg.src = '';
+    document.body.style.overflow = '';
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  };
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.view-cert-btn');
+    if (btn) {
+      e.preventDefault();
+      const src = btn.getAttribute('data-src');
+      if (src) openModal(src, btn);
+      return;
+    }
+
+    // Open modal when clicking on a project thumbnail image
+    const thumb = e.target.closest('.project-thumb');
+    if (thumb && thumb.closest('.project-card')) {
+      e.preventDefault();
+      const src = thumb.getAttribute('data-src') || thumb.src;
+      if (src) openModal(src, thumb);
+      return;
+    }
+
+    if (e.target === modalBackdrop) closeModal();
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalBackdrop.style.display === 'flex') {
+      closeModal();
+    }
+  });
+});
