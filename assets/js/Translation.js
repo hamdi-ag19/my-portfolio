@@ -69,7 +69,6 @@ const translations = {
 
     upcomingProjectsTitle: "More Coming Soon",
     upcomingProjectsText: "New projects  are being added — check back soon.",
-      upcomingLabel: "Coming Soon",
 
     MyServicestitle:"My Services",
     MyServices1text:"Web Development",
@@ -98,13 +97,17 @@ const translations = {
     Numbers3text:"Technology skills ",
     Numbers4text:"Happy Clients",
 
-   // MyJourneytitle:"My Journey",
-    //MyJourney1text:"The Spark",
-    //MyJourney2text:"Started my journey into the world of programming with Python and JavaScript.",
-    //MyJourney3text:"Web Specialization",
-    //MyJourney4text:"Focused on Frontend and Backend technologies to build full-stack apps.",
-    //MyJourney5text:"Graduation",
-    //MyJourney6text:"Graduating from Taibah University as a Computer Science | As a full-stack web developer.",
+   CertificatesTitle:"Certificates",
+    Certi1text:"A certificate from the (Tuwaiq Academy)",
+    Certi2text:"A certificate from the Satr platform affiliated with me (Tuwaiq Academy) presented in HTML.",
+    Certi3text:"A certificate from the (Tuwaiq Academy)",
+    Certi4text:"A certificate from the Satr platform affiliated with me (Tuwaiq Academy) presented in CSS.",
+    Certi5text:"A certificate from the (Tuwaiq Academy)",
+    Certi6text:"A certificate from the Satr platform affiliated with me (Tuwaiq Academy) presented in GIT.",
+
+    Certi7text:"View Certificate",
+    Certi8text:"View Certificate",
+    Certi9text:"View Certificate",
 
     upcomingLabelcerts:"Coming Soon",
     upcomingcertstitle:"More Coming Soon",
@@ -200,7 +203,6 @@ const translations = {
 
     upcomingProjectsTitle: "المزيد قادم قريبًا",
     upcomingProjectsText: "يتم إضافة مشاريع  جديدة —  قريبًا.",
-      upcomingLabel: "المزيد قادم",
 
     MyServicestitle:"خدماتي",
     MyServices1text:"تطوير الويب",
@@ -229,13 +231,17 @@ const translations = {
     Numbers3text:" المهرات  التكنولوجيا ",
     Numbers4text:"عملاء سعداء",
 
-   // MyJourneytitle:"رحلتي",
-    //MyJourney1text:"بدأت",
-    //MyJourney2text:"بدأت رحلتي في عالم البرمجة باستخدام بايثون و JavaScript.",
-    //MyJourney3text:"تخصص الويب",
-    //MyJourney4text:"التركيز على تقنيات الواجهة الأمامية والخلفية لبناء تطبيقات متكاملة.",
-    //MyJourney5text:"التخرج",
-    //MyJourney6text:"التخرج من جامعة طيبة في علوم الحاسوب | كمطور ويب متكامل.",
+    CertificatesTitle:"الشهادات",
+    Certi1text:"شهادة من (أكاديمية طويق)",
+    Certi2text:"شهادة من منصة سطر التابعة لي (أكاديمية طويق) مقدمة في HTML.",
+    Certi3text:"شهادة من (أكاديمية طويق)",
+    Certi4text:"شهادة من منصة سطر التابعة لي (أكاديمية طويق) مقدمة في CSS.",
+    Certi5text:"شهادة من (أكاديمية طويق)",
+    Certi6text:"شهادة من منصة سطر التابعة لي (أكاديمية طويق) مقدمة في GIT.",
+
+    Certi7text:"عرض الشهادة",
+    Certi8text:"عرض الشهادة",
+    Certi9text:"عرض الشهادة",
 
    upcomingLabelcerts:"قريبًا",
    upcomingcertstitle:"المزيد قادم قريبًا",
@@ -339,7 +345,6 @@ loader.classList.add("active");setTimeout(() => {
   document.getElementById("projects-8text").textContent = t.projects8text;
   document.getElementById("projects-9text").textContent = t.projects9text;
 
-    document.getElementById("upcoming-ribbon-projects").textContent = t.upcomingLabel;
   document.getElementById("upcoming-projects-title").textContent = t.upcomingProjectsTitle;
   document.getElementById("upcoming-projects-text").textContent = t.upcomingProjectsText;
 
@@ -373,15 +378,18 @@ loader.classList.add("active");setTimeout(() => {
   document.getElementById("Numbers-3text").textContent = t.Numbers3text;
   document.getElementById("Numbers-4text").textContent = t.Numbers4text;
 
-   // document.getElementById("Myjourney-title").textContent = t.MyJourneytitle;
-   // document.getElementById("MyJourney-1text").textContent = t.MyJourney1text;
-   // document.getElementById("MyJourney-2text").textContent = t.MyJourney2text;
-   // document.getElementById("MyJourney-3text").textContent = t.MyJourney3text;
-    ///document.getElementById("MyJourney-4text").textContent = t.MyJourney4text;
-    //document.getElementById("MyJourney-5text").textContent = t.MyJourney5text;
-    //document.getElementById("MyJourney-6text").textContent = t.MyJourney6text;
-      
-  document.getElementById("upcoming-ribbon-certs").textContent = t.upcomingLabelcerts;
+    document.getElementById("Certificates-title").textContent = t.CertificatesTitle;
+    document.getElementById("Certi-1text").textContent = t.Certi1text;
+    document.getElementById("Certi-2text").textContent = t.Certi2text;
+    document.getElementById("Certi-3text").textContent = t.Certi3text;
+    document.getElementById("Certi-4text").textContent = t.Certi4text;
+    document.getElementById("Certi-5text").textContent = t.Certi5text;
+    document.getElementById("Certi-6text").textContent = t.Certi6text;
+
+    document.getElementById("Certi-7text").textContent = t.Certi7text;
+    document.getElementById("Certi-8text").textContent = t.Certi8text;
+    document.getElementById("Certi-9text").textContent = t.Certi9text;
+
   document.getElementById("upcoming-certs-title").textContent = t.upcomingcertstitle;
   document.getElementById("upcoming-certs-text").textContent = t.upcomingcertstext;
 
