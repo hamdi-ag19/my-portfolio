@@ -17,10 +17,16 @@ img[loading="lazy"] {
     transition: opacity 0.5s ease-in-out;
 }
 
-img.loaded {
-    opacity: 1;
+@keyframes pulse {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.2) translate(-50px, 50px); }
 }
 
+/* تأكد من أن المحتوى فوق الخلفية */
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
 
 * {margin:0; padding:0; box-sizing:border-box;}
 body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f8fafc; color:#475569; line-height:1.7; padding-top:70px; transition:background 0.3s, color 0.3s;}
@@ -1031,7 +1037,6 @@ body.dark .edu-meta span { color: #cbd5e1; }
 
 .project-card { position: relative; }
 
-/* Thumbnail hover overlay */
 .project-thumb-wrap { position: relative; }
 .thumb-overlay {
     position: absolute;
@@ -1497,156 +1502,6 @@ body.dark .cert-modal-close {
     color: #fff;
     box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
-
-
-/* =========== Timeline Section Formatting =========== */
-/* =========== تنسيق قسم  رحلتي  ========== */
-
-.timeline-wrapper, .timeline-container {
-    width: 100%;
-    max-width: 900px;      
-    margin-top: 20px;
-}
-
-/* The main line of the timeline */
-/* الخط الرئيسي للمخطط الزمني */
-
-.timeline-container {
-    position: relative;
-    max-width: 800px;
-    margin: 40px auto;
-    padding-left: 50px;
-    border-left: 3px solid #e2e8f0; 
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 50px;
-    transition: 0.4s;
-}
-
-/* The bright spot on the line */
-/* النقطة المضيئة على الخط */
-
-.timeline-dot {
-    position: absolute;
-    left: -67px; 
-    width: 35px;
-    height: 35px;
-    background: white;
-    border: 3px solid #2563eb;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #2563eb;
-    font-size: 0.9rem;
-    z-index: 10;
-    transition: 0.4s;
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
-}
-
-.timeline-date {
-    font-weight: 800;
-    color: #2563eb;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-/* Glass card design */
-/* تصميم البطاقة الزجاجي */
-
-.timeline-content {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 20px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-    transition: 0.4s;
-}
-
-.timeline-content h3 {
-    margin-top: 0;
-    color: #1e293b;
-    font-size: 1.3rem;
-}
-
-.timeline-content p {
-    color: #64748b;
-    margin-bottom: 0;
-    line-height: 1.6;
-}
-
-.timeline-item:hover .timeline-content {
-    transform: translateX(10px);
-    border-color: #38bdf8;
-    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.1);
-}
-
-.timeline-item:hover .timeline-dot {
-    background: #2563eb;
-    color: white;
-    transform: scale(1.2);
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
-}
-
-.timeline-item.highlight .timeline-dot {
-    background: #2563eb;
-    color: white;
-    animation: pulse-blue 2s infinite;
-}
-
-@keyframes pulse-blue {
-    0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
-    70% { box-shadow: 0 0 0 15px rgba(37, 99, 235, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
-}
-
-/* When converting to Arabic */
-/* عند التحويل الي العربي*/
-
-[lang="ar"] .journey-section {
-    direction: rtl;
-    text-align: right;
-}
-
-[lang="ar"] .timeline-wrapper,
-[lang="ar"] .timeline-container {
-    border-left: none !important; 
-    border-right: 2px solid #e2e8f0; 
-    padding-left: 0 !important;
-    padding-right: 40px; 
-    margin-left: 0 !important;
-    margin-right: 30px; 
-}
-
-[lang="ar"] .node-dot,
-[lang="ar"] .timeline-dot {
-    left: auto !important; 
-    right: -51px; 
-}
-
-[lang="ar"] .node-content {
-    margin-left: 0 !important;
-    margin-right: 10px; 
-    text-align: right;
-}
-
-[lang="ar"] .node-year {
-    text-align: right;
-    display: block;
-}
-
-/* الوضع الداكن (Dark Mode) */
-
-body.dark .timeline-container { border-left-color: #334155; }
-body.dark .timeline-content {
-    background: #1e293b;
-    border-color: #334155;
-}
-body.dark .timeline-content h3 { color: #f1f5f9; }
-body.dark .timeline-content p { color: #94a3b8; }
-body.dark .timeline-dot { background: #0f172a; border-color: #38bdf8; color: #38bdf8; }
 
 
 /* =========== Learning Section Formatting ============ */
