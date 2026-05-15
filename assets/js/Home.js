@@ -372,6 +372,7 @@ window.onblur = function () { document.title = "Don't forget me! 💻"; }
 window.onfocus = function () { document.title = "Hamdi Al-Luqmani | Portfolio"; }
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
   const modalBackdrop = document.createElement('div');
   modalBackdrop.className = 'cert-modal-backdrop';
@@ -392,9 +393,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = modalBackdrop.querySelector('.cert-modal-close');
   let lastFocused = null;
 
-  const openModal = (src, trigger) => {
+ const openModal = (src, trigger) => {
     lastFocused = trigger || document.activeElement;
-    modalImg.src = src;
+    
+    modalImg.removeAttribute('loading'); 
+    modalImg.src = src; 
+    
     modalBackdrop.style.display = 'flex';
     modalBackdrop.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -419,6 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Open modal when clicking the overlay (icon) or on a project thumbnail image
+    //فتح النموذج عند النقر على التراكب (الأيقونة) أو على صورة مصغرة للمشروع
     const overlay = e.target.closest('.thumb-overlay');
     if (overlay && overlay.closest('.project-card')) {
       e.preventDefault();
