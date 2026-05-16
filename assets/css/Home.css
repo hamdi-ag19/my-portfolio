@@ -719,7 +719,6 @@ body.dark .highlight-item { background: #334155; color: #38bdf8; }
 /* =============  Skills Section Formatting  ========== */
 /* =============  تنسيق قسم المهارات الموحد  ========== */
 
-/*  الحاوية الكبيرة والمقسمات */
 .skills-main-card {
     background: #ffffff;
     border-radius: 30px;
@@ -730,7 +729,7 @@ body.dark .highlight-item { background: #334155; color: #38bdf8; }
 
 .skills-divider {
     height: 2px;
-    background: #f1f5f9;
+    background: #272828;
     margin: 40px 0;
 }
 
@@ -822,6 +821,10 @@ body.dark .highlight-item { background: #334155; color: #38bdf8; }
 body.dark .skills-main-card {
     background: #05070d;
     border-color: #1e293b;
+}
+
+ body.dark .skills-divider {
+    background: #ffffff;
 }
 
 body.dark .skill-card, 
@@ -1325,7 +1328,7 @@ body.dark .project-tech .tech i {
     padding: 40px 30px;
     border-radius: 24px;
     border: 1px solid #f1f5f9;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.595), 
+   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.595), 
                 0 4px 6px -2px rgba(0, 0, 0, 0.600);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     text-align: center; 
@@ -1392,7 +1395,6 @@ body.dark .service-item:hover {
     box-shadow: 0 0 20px rgba(56, 69, 248, 0.595) !important;
 }
 
-/* استجابة الشاشات الصغيرة */
 @media (max-width: 480px) {
     .services-grid {
         grid-template-columns: 1fr;
@@ -1409,17 +1411,16 @@ body.dark .service-item:hover {
 }
 
 /* ========== Achievements Section Formatting =========== */
-/* ========== تنسيق قسم  الارقام   =========== */
+/* ========== تنسيق قسم  الارقام    =========== */
 
 .achievements-section-v2 {
     --ach-bg: #ffffff;
-    --ach-text: #1e293b;
+    --ach-text: #0f172a; 
     --ach-card: #ffffff;
-    --ach-shadow: rgba(0, 0, 0, 0.05);
-    --ach-border: rgba(0, 0, 0, 0.03);
+    --ach-shadow: rgba(0, 0, 0, 0.06);
+    --ach-border: #f1f5f9;
     --ach-accent: #2563eb;
     --ach-label: #64748b;
-
     padding: 80px 0;
     width: 100%;
     display: block !important;
@@ -1432,9 +1433,9 @@ body.dark .service-item:hover {
 body.dark .achievements-section-v2 {
     --ach-bg: #0f172a;      
     --ach-text: #f1f5f9;    
-    --ach-card: #1e293b;    
+    --ach-card: rgba(30, 41, 59, 0.7); 
     --ach-shadow: rgba(0, 0, 0, 0.4);
-    --ach-border: rgba(255, 255, 255, 0.05);
+    --ach-border: rgba(51, 65, 85, 0.5);
     --ach-label: #94a3b8;
 }
 
@@ -1446,8 +1447,7 @@ body.dark .achievements-section-v2 {
 }
 
 /* Achievement Header Formatting */
-/* تنسيق عنوان الإنجازات */
-
+/* تنسيق العنوان الرئيسي لقسم الإنجازات */
 .achievements-header {
     width: 100% !important;
     text-align: center !important;
@@ -1456,85 +1456,110 @@ body.dark .achievements-section-v2 {
 }
 
 .achievements-main-title {
-    font-size: 2.2rem;
+    font-size: 2.5rem; 
     color: var(--ach-text);
     font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     transition: color 0.4s ease;
 }
 
 .header-line {
-    width: 50px;
+    width: 60px;
     height: 4px;
     background: var(--ach-accent);
     margin: 0 auto;
     border-radius: 2px;
 }
 
-/* Dealing the cards in a single row */
-/* توزيع الكروت في صف واحد */
-
 .achievements-cards-wrapper {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important; 
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important; 
+    gap: 25px;
     width: 100%;
 }
 
 /* Achievement Card Formatting */
-/* تنسيق البطاقة المصغرة */
-
-
+/* تنسيق كروت الإنجازات */
 .stat-card.compact {
     background-color: var(--ach-card);
-    padding: 30px 15px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px var(--ach-shadow);
+    padding: 40px 20px; 
+    border-radius: 24px; 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.595), 
+                0 4px 6px -2px rgba(0, 0, 0, 0.600);
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     border: 1px solid var(--ach-border);
+    cursor: pointer;
 }
 
 .stat-card.compact:hover {
-    transform: translateY(-8px);
-    border-color: var(--ach-accent);
+    transform: translateY(-10px);
+    border-color: #38bdf8;
+    box-shadow: 0 20px 25px -5px rgba(56, 189, 248, 0.15);
+    background-color: #ffffff;
+}
+
+body.dark .stat-card.compact:hover {
+    background-color: rgba(30, 41, 59, 0.9);
 }
 
 .stat-card.compact i {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: var(--ach-accent);
-    margin-bottom: 15px;
-    display: block;
+    margin-bottom: 20px;
+    display: inline-block;
+    filter: drop-shadow(0 4px 6px rgba(37, 99, 235, 0.2));
+    transition: transform 0.4s ease;
 }
 
+.stat-card.compact:hover i {
+    transform: scale(1.15) translateY(-3px);
+    color: #38bdf8; 
+}
+
+/* Formatting the large number and label in the achievement cards */
+/* تنسيق الرقم الضخم */
 .stat-number {
-    font-size: 2.3rem;
+    font-size: 3rem; 
     font-weight: 800;
     color: var(--ach-text);
     margin: 5px 0;
+    line-height: 1;
+    letter-spacing: -1px;
     transition: color 0.4s ease;
 }
 
 .stat-label {
     color: var(--ach-label);
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin: 0;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-top: 10px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 @media (max-width: 992px) {
     .achievements-cards-wrapper {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .achievements-cards-wrapper {
         grid-template-columns: 1fr !important;
     }
+    .stat-number {
+        font-size: 2.5rem;
+    }
 }
 
+body.dark .stat-card.compact {
+    background: rgba(30, 41, 59, 0.7) !important;
+    backdrop-filter: blur(10px);
+    border-color: rgba(51, 65, 85, 0.5) !important;
+    box-shadow: 0 10px 15px -3px rgba(1, 9, 249, 0.596) !important;
+}
 
 
 /* =========== Learning Section Formatting ============ */
@@ -1553,6 +1578,15 @@ body.dark .achievements-section-v2 {
     border-radius: 15px;
     border: 1px solid #e2e8f0;
     transition: 0.3s ease;
+     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.595), 
+                0 4px 6px -2px rgba(0, 0, 0, 0.600);
+}
+
+.learning-item:hover {
+    transform: translateY(-8px);
+    border-color: #38bdf8;
+    background: #ffffff;
+    box-shadow: 0 20px 25px -5px rgba(56, 189, 248, 0.15);
 }
 
 .tech-info {
@@ -1629,6 +1663,8 @@ body.dark .achievements-section-v2 {
 body.dark .learning-item {
     background: #1e293b;
     border-color: #334155;
+    box-shadow: 0 10px 15px -3px rgba(1, 9, 249, 0.596) ;
+
 }
 body.dark .learning-item h3 { color: #f1f5f9; }
 body.dark .progress-container { background: #334155; }
