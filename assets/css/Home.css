@@ -120,10 +120,11 @@ html, body {
 .hero p,
 .hero .hero-subtitle {
     font-size: 1.25rem;
-    color: #94a3b8; 
+    color: #00e5ff; 
     max-width: 600px;
     margin: 0 auto 40px;
     line-height: 1.6;
+    font-weight: 180;
 }
 
 
@@ -636,85 +637,7 @@ body.dark .timeline-content p { color: #94a3b8; }
 
 
 /* ========== About Section Formatting =========== */
-/* ========== تنسيق قسم عني  =========== 
-
-.about-wrapper {
-  margin-top: 100px;
-    align-items: center;
-    gap: 40px;
-    padding: 50px !important;
-}
-
-.about-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.profile-circle {
-    width: 150px;
-    height: 150px;
-    background: linear-gradient(135deg, #2563eb, #38bdf8);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-    color: white;
-    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
-}
-
-.about-content {
-    flex: 2;
-}
-
-.lead-text {
-    font-size: 1.2rem;
-    color: #0f172a;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.sub-text {
-    font-size: 1rem;
-    color: #64748b;
-    line-height: 1.8;
-}
-
-.about-highlights {
-    display: flex;
-    gap: 20px;
-    margin-top: 25px;
-}
-
-.highlight-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #f1f5f9;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    color: #2563eb;
-    font-weight: 600;
-}
-
-body.dark .lead-text { color: #f1f5f9; }
-body.dark .sub-text { color: #94a3b8; }
-body.dark .highlight-item { background: #334155; color: #38bdf8; }
-
-@media (max-width: 768px) {
-    .about-wrapper {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px !important;
-    }
-    .about-highlights {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-}*/
-
+/* ========== تنسيق قسم عني  =========== */
 
 .compact-premium * {
     box-sizing: border-box;
@@ -847,13 +770,12 @@ body.dark .highlight-item { background: #334155; color: #38bdf8; }
     direction: ltr;
     border-right: 4px solid #2563eb; 
     border-radius: 2px;
-    filter: drop-shadow(0px 0px 8px rgba(37, 99, 235, 0.5));
     transition: all 0.3s ease;
 }
 
 .about-wrapper.compact-premium:hover .sub-text {
-    border-right-color: #38bdf8;
-    filter: drop-shadow(0px 0px 12px rgba(56, 189, 248, 0.8));
+    border-right-color: #00b3ff;
+    filter: drop-shadow(0px 0px 12px rgba(0, 179, 255, 0.8));
 }
 
 .about-highlights-grid {
@@ -871,14 +793,14 @@ body.dark .highlight-item { background: #334155; color: #38bdf8; }
     padding: 10px 16px;
     border-radius: 12px;
     border: 1px solid #f1f5f9;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.579);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .highlight-card:hover {
     background: #ffffff;
     border-color: rgba(37, 99, 235, 0.3);
-    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 8px 22px rgba(37, 100, 235, 0.432);
     transform: translateY(-2px);
 }
 
@@ -894,7 +816,7 @@ body.dark .highlight-item { background: #334155; color: #38bdf8; }
     font-size: 16px;
     transition: all 0.25s ease;
     flex-shrink: 0;
-    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 2px 6px rgba(37, 100, 235, 0.325);
 }
 
 .highlight-card:hover .card-icon {
@@ -937,15 +859,15 @@ body.dark .lead-text strong { color: #38bdf8; }
 body.dark .body-desc { color: #94a3b8; }
 
 body.dark .sub-text { 
-    border-right-color: #38bdf8; 
-    filter: drop-shadow(0px 0px 10px rgba(56, 189, 248, 0.6)); 
+    border-right-color: #00b3ff;
+    filter: drop-shadow(0px 0px 12px rgba(0, 179, 255, 0.8));
     color: #94a3b8; 
 }
 
 body.dark .highlight-card {
     background: rgba(30, 41, 59, 0.4);
     border-color: rgba(255, 255, 255, 0.02);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(43, 0, 255, 0.47);
 }
 
 body.dark .highlight-card:hover {
@@ -1032,6 +954,7 @@ body.dark .about-wrapper.compact-premium:hover .circle-deco { border-color: #38b
         padding: 12px;
     }
 }
+
 
 /* =============  Skills Section Formatting  ========== */
 /* =============  تنسيق قسم المهارات الموحد  ========== */

@@ -21,9 +21,7 @@ const translations = {
 
     heroTitle: "Hamdi  Al-Luqmani",
     heroSubtitle: "Computer Science | Full-Stack Web Developer",
-    heroDesc:"Crafting digital experiences with passion.",
-    hero1Desc: "I transform complex ideas into simple, elegant digital solutions. Dedicated to building scalable web applications with a user-centric approach.",
-    hero2Desc: "A web developer specialized in full-stack application development, with a focus on clean code and unforgettable user experiences.",
+    description: "I transform complex ideas into high-performance, elegant digital solutions with a user-centric approach.",
     heroBtn1: "View CV", 
     heroBtn2: "Contact",
 
@@ -63,8 +61,8 @@ const translations = {
     projects4text: "Mines-vs-Treasure--Game",
     projects5text: "It is the Mines vs Treasure game -- a game where you must survive the mines and find the treasure, developed using JavaScript.",
     projects6text: "View Project",
-    projects7text: "Blog CMS",
-    projects8text: "A Content Management System for blogs developed with PHP and SQL for dynamic content.",
+    projects7text: "University Events Management System (Univents)",
+    projects8text: "Univents is a smart event communication platform designed for Taibah University. It solves the problem of scattered and unorganized event announcements by providing one centralized, easy-to-use system.",
     projects9text: "View Project",
 
     upcomingProjectsTitle: "More Coming Soon",
@@ -155,9 +153,7 @@ const translations = {
 
     heroTitle: "حمدي اللقماني",
     heroSubtitle: "علوم حاسب | مطور ويب متكامل",
-    heroDesc:"صناعة تجارب رقمية بشغف وإتقان.",
-    hero1Desc: "أحول الأفكار المعقدة إلى حلول رقمية بسيطة وأنيقة. متخصص في بناء تطبيقات ويب قابلة للتوسع مع التركيز التام على تجربة المستخدم.",
-    hero2Desc: "مطور ويب  متخصص في تطوير التطبيقات الشاملة (Full-Stack)، مع التركيز على الكود النظيف وتجارب المستخدم التي لا تُنسى.",
+    description: "أنا أحول الأفكار المعقدة إلى حلول رقمية أنيقة وعالية الأداء مع نهج يركز على المستخدم.",
     heroBtn1: "عرض السيرة", 
     heroBtn2: "تواصل معي",
 
@@ -197,8 +193,8 @@ const translations = {
     projects4text: "لعبة Mines vs Treasure",
     projects5text: "لعبة Mines vs Treasure -- لعبة حيث يجب عليك البقاء على قيد الحياة وتجد الكنز, تم تطويرها باستخدام JavaScript.",
     projects6text: "عرض المشروع",
-    projects7text: "نظام إدارة محتوى المدونات",
-    projects8text: "نظام لإدارة المحتوى للمدونات تم تطويره باستخدام PHP و SQL للمحتوى الديناميكي.",
+    projects7text: "نظام ادراة الفعاليات الجامعية (Univents)",
+    projects8text: "Univents هو نظام ذكي للتواصل وإدارة الفعاليات صُمم خصيصًا لجامعة طيبة. يهدف إلى حل مشكلة تشتت الإعلانات وعدم تنظيمها من خلال توفير منصة موحدة وسهلة الاستخدام.",
     projects9text: "عرض المشروع",
 
     upcomingProjectsTitle: "المزيد قادم قريبًا",
@@ -298,13 +294,11 @@ loader.classList.add("active");setTimeout(() => {
     document.getElementById("nav-currently-learning").innerHTML = `<i class="fas fa-book-reader"></i> ${t.navCurrentlyLearning}`;
     document.getElementById("nav-contact").innerHTML = `<i class="fas fa-envelope"></i> ${t.navContact}`;
 
-    document.getElementById("heroBtn1").textContent = t.heroBtn1;
-    document.getElementById("heroBtn2").textContent = t.heroBtn2;
+    document.getElementById("hero-description").textContent = t.description;
     document.getElementById("hero-title").textContent = t.heroTitle;
     document.getElementById("hero-subtitle").textContent = t.heroSubtitle;
-    document.getElementById("hero-desc").textContent = t.heroDesc;
-    document.getElementById("hero-1Desc").textContent = t.hero1Desc;
-    document.getElementById("hero-2Desc").textContent = t.hero2Desc;
+    document.getElementById("heroBtn1").textContent = t.heroBtn1;
+    document.getElementById("heroBtn2").textContent = t.heroBtn2;
 
     document.getElementById("about-title").textContent = t.aboutTitle;
     document.getElementById("about-1text").textContent = t.about1Text;

@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="1200" height="800" fill="#fff7ed"/>
-  <g fill="#7c2d12" font-family="Cairo, Arial, sans-serif" font-weight="700">
-    <text x="50%" y="45%" font-size="44" text-anchor="middle">Blog CMS</text>
-    <text x="50%" y="55%" font-size="20" text-anchor="middle" fill="#92400e">Screenshot placeholder</text>
-  </g>
-</svg>
